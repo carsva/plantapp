@@ -5,11 +5,7 @@ export const AppContext = React.createContext('plant');
 
 export class AppProvider extends React.Component {
     state = {
-      plants: [
-        {
-
-        },
-      ],
+      name: 'Calle'
     };
   
     render() {
@@ -24,3 +20,5 @@ export class AppProvider extends React.Component {
       );
     }
   }
+  
+  export const AppConsumer = AppContext.Consumer;
