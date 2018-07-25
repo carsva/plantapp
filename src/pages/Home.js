@@ -9,14 +9,13 @@ let styles = {
   paddingBottom: '10px',
 };
 
-class Start extends Component {
+class Home extends Component {
   render() {
     return (
       <AppConsumer>
         {context => (
           <div className="App">
-            <p>Welcome to the nr1 plant saver app</p>
-            <Link to="/home"><button>Get started</button></Link>
+            <Link to="/addplant"><button>Add a plant</button></Link>
             <div style={styles}>
               <h3>Data that lives in the context</h3>
               <pre>{JSON.stringify(context, null, 4)}</pre>
@@ -28,4 +27,4 @@ class Start extends Component {
   }
 }
 
-export default Start;
+export default Home;
