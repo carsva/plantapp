@@ -5,7 +5,12 @@ export const AppContext = React.createContext('plant');
 
 export class AppProvider extends React.Component {
     state = {
-      name: 'Calle'
+      plants: [
+          {
+              name: 'Defaultplant'
+
+          }
+      ]
     };
     
     // testFunction = () => {
