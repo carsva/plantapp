@@ -7,15 +7,20 @@ export class AppProvider extends React.Component {
     state = {
       name: 'Calle'
     };
-  
+    
+    // testFunction = () => {
+    //   alert('test')  
+    // }
+
+
     render() {
+
+
       const value = {
           state: {
             ...this.state
           },
-          test: () => {
-              alert('test');
-          }
+        //   test: this.testFunction,
       };
       
       return (
