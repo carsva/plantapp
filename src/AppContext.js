@@ -10,7 +10,12 @@ export class AppProvider extends React.Component {
   
     render() {
       const value = {
-    ...this.state
+          state: {
+            ...this.state
+          },
+          test: () => {
+              alert('test');
+          }
       };
       
       return (

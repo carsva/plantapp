@@ -5,10 +5,11 @@ class Start extends Component {
   render() {
     return (
       <AppConsumer>
-        {state => (
+        {(context) => (
           <div>
-            {state.name}
-            <pre>{JSON.stringify(state, null, 4)}</pre>
+            {context.state.name}
+            <pre>{JSON.stringify(context, null, 4)}</pre>
+            <button onClick={context.test}>Funktionstest</button>
           </div>
         )}
       </AppConsumer>
