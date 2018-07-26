@@ -4,9 +4,9 @@ export const AppContext = React.createContext('plant');
 
 const defaultPlant = {
         name: 'Bill',
-        amount: null,
-        timesPerMonth: null,
-        picture: 'plant.jpg',
+        amount: 2,
+        timesPerMonth: 3,
+        picture: './../plant.jpg',
 };
 
 const MakeNewPlant = () => {
@@ -22,7 +22,6 @@ export class AppProvider extends React.Component {
     plants: [
       {
         ...MakeNewPlant(),
-        name: 'Something',
       },
     ],
   };
@@ -31,6 +30,7 @@ export class AppProvider extends React.Component {
   //   alert('test')
   // }
   newPlant = values => {
+    console.log('values', values)
     this.setState({
       ...this.state,
       plants: [

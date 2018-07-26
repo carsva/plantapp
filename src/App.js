@@ -5,6 +5,8 @@ import { AppProvider } from './AppContext';
 import Start from './pages/Start';
 import Home from './pages/Home';
 import AddPlant from './pages/AddPlant';
+import yourPlants from './pages/yourPlants';
+import Plant from './pages/Plant';
 
 class App extends Component {
   render() {
@@ -17,6 +19,8 @@ class App extends Component {
                 <Route path="/" exact component={Start} />
                     <Route path="/home" exact component={Home} />
                     <Route path="/addplant" exact component={AddPlant} />
+                    <Route path="/yourplants" exact component={yourPlants} />
+                    <Route path="/plant/:id" component={Plant} />
 
               </Switch>
             </div>
