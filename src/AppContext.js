@@ -2,19 +2,19 @@ import React from 'react';
 
 export const AppContext = React.createContext('plant');
 
-const defaultPlant = {
-        name: 'Bill',
-        amount: 2,
-        timesPerMonth: 3,
-        picture: './../plant.jpg',
-        watered: true
-};
+// const defaultPlant = {
+//         name: 'Bill',
+//         amount: 2,
+//         timesPerMonth: 3,
+//         picture: './../plant.jpg',
+//         watered: true
+// };
 
-const MakeNewPlant = () => {
-    return {
-      ...defaultPlant,
-    };
-  };
+// const MakeNewPlant = () => {
+//     return {
+//       ...defaultPlant,
+//     };
+//   };
 
 
 export class AppProvider extends React.Component {
@@ -22,7 +22,7 @@ export class AppProvider extends React.Component {
   state = {
     plants: [
       {
-        ...MakeNewPlant(),
+        // ...MakeNewPlant(),
       },
     ],
   };
@@ -37,7 +37,7 @@ export class AppProvider extends React.Component {
       plants: [
         ...this.state.plants,
         {
-        ...MakeNewPlant(),
+        // ...MakeNewPlant(),
         ...values,
         },
       ],

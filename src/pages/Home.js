@@ -4,8 +4,6 @@ import { Link } from 'react-router-dom';
 
 class Water extends Component {
   render() {
-    
-
     // newPlant = values => {
     //   console.log('values', values)
     //   this.setState({
@@ -20,29 +18,26 @@ class Water extends Component {
     //   });
     // };
 
-var watermap = () => {
+    var watermap = () => {
+      var plants = this.props.plants;
 
-  var plants = this.props.plants;
-
-plants.map((plant) => {
-  if (plant.watered === false) {
-
-    console.log(plant.name + ' needs water')
-  } else {
-    console.log(plant.name + ' is happy')
-  }
-  
-
-}) 
-
-
-}
-    return(
+      if (!plants) {
+        return <div>You have no plants</div>;
+      } else {
+        return plants.map(plant => {
+          if (plant.watered === false) {
+            return <div>Some plants need water</div>;
+          } else {
+            return <div>Plants are happy</div>;
+          }
+        });
+      }
+    };
+    return (
       <div className="App">
-        Hello
-        {watermap()}
+        <h1>{watermap()}</h1>
       </div>
-    )
+    );
   }
 }
 
@@ -73,8 +68,7 @@ class Home extends Component {
       <AppConsumer>
         {context => (
           <div className="App background-watered">
-          <Water plants={context.state.plants}/>
-            <h3>Wee! All your plants are watered</h3>
+            <Water plants={context.state.plants} />
             <Link to="/yourplants">Your plants</Link>
             <br />
             <br />
