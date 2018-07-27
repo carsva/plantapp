@@ -7,7 +7,7 @@ class Water extends Component {
     // newPlant = values => {
     //   console.log('values', values)
     //   this.setState({
-    //     ...this.state,
+    //     ...this.state,s
     //     plants: [
     //       ...this.state.plants,
     //       {
@@ -20,19 +20,29 @@ class Water extends Component {
 
     var watermap = () => {
       var plants = this.props.plants;
+      var needsWater = this.props.state.needsWater;
+      console.log(this.props.state);
+      
 
-      if (!plants) {
+      if (plants.length <1 ) {
         return <div>You have no plants</div>;
       } else {
-        return plants.map(plant => {
-          if (plant.watered === false) {
-            return <div>Some plants need water</div>;
-          } else {
-            return <div>Plants are happy</div>;
+          plants.map((plant) => {
+            if(plant.watered === false) 
+            console.log('needs water')
+            this.props.isWatered(false);
           }
-        });
+          )}
+        
+        // return plants.map(plant => {
+        //   if (plant.watered === false) {
+        //     
+        //   } else {
+        //    
+        //   }
+        // });
       }
-    };
+
     return (
       <div className="App">
         <h1>{watermap()}</h1>
@@ -60,15 +70,43 @@ class Home extends Component {
     }
 
     */
+//    if (condition1) {
+//     block of code to be executed if condition1 is true
+// } else if (condition2) {
+//     block of code to be executed if the condition1 is false and condition2 is true
+// } else {
+//     block of code to be executed if the condition1 is false and condition2 is false
+// }
+
+   renderClass (context) {
+    
+    if (context.needsWater === false) {
+      return (
+        'background-watered'
+      )
+    } else if (context.needsWater === true) {
+      return (
+        'background-notwatered'
+      )
+    } else {
+      return 'background-neutral'
+    }
+    
+    } 
+
+  
 
   render() {
-    const isWatered = () => {};
+
+    
+      
+    
 
     return (
       <AppConsumer>
         {context => (
-          <div className="App background-watered">
-            <Water plants={context.state.plants} />
+          <div className={this.renderClass(context.state)}>
+            <Water plants={context.state.plants} state={context.state} isWatered={context.isWatered}/>
             <Link to="/yourplants">Your plants</Link>
             <br />
             <br />

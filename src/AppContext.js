@@ -16,29 +16,35 @@ export const AppContext = React.createContext('plant');
 //     };
 //   };
 
-
 export class AppProvider extends React.Component {
-
   state = {
     plants: [
       {
-        // ...MakeNewPlant(),
+        name: 'Bill',
+        amount: 2,
+        timesPerMonth: 3,
+        picture: './../plant.jpg',
+        watered: false
       },
     ],
+    needsWater: null,
   };
 
   // testFunction = () => {
   //   alert('test')
   // }
+
+ 
+
   newPlant = values => {
-    console.log('values', values)
+    console.log('values', values);
     this.setState({
       ...this.state,
       plants: [
         ...this.state.plants,
         {
-        // ...MakeNewPlant(),
-        ...values,
+          // ...MakeNewPlant(),
+          ...values,
         },
       ],
     });
@@ -50,6 +56,10 @@ export class AppProvider extends React.Component {
         ...this.state,
         newPlant: this.newPlant,
       },
+      isWatered: (status) => {
+        console.log('Is watered function calling from context')
+        console.log(status)
+      }
     };
 
     return (
