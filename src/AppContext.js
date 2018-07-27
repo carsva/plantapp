@@ -27,7 +27,7 @@ export class AppProvider extends React.Component {
         watered: false
       },
     ],
-    needsWater: null,
+    needsWater: true,
   };
 
   // testFunction = () => {
@@ -37,7 +37,6 @@ export class AppProvider extends React.Component {
  
 
   newPlant = values => {
-    console.log('values', values);
     this.setState({
       ...this.state,
       plants: [
@@ -50,17 +49,18 @@ export class AppProvider extends React.Component {
     });
   };
 
+
   render() {
+   
+    console.log(this.state)
     const value = {
       state: {
         ...this.state,
         newPlant: this.newPlant,
+        isWatered: this.isWatered,
       },
-      isWatered: (status) => {
-        console.log('Is watered function calling from context')
-        console.log(status)
-      }
-    };
+      
+  }
 
     return (
       <AppContext.Provider value={value}>

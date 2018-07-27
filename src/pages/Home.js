@@ -2,54 +2,6 @@ import React, { Component } from 'react';
 import { AppConsumer } from '../AppContext';
 import { Link } from 'react-router-dom';
 
-class Water extends Component {
-  render() {
-    // newPlant = values => {
-    //   console.log('values', values)
-    //   this.setState({
-    //     ...this.state,s
-    //     plants: [
-    //       ...this.state.plants,
-    //       {
-    //       ...MakeNewPlant(),
-    //       ...values,
-    //       },
-    //     ],
-    //   });
-    // };
-
-    var watermap = () => {
-      var plants = this.props.plants;
-      var needsWater = this.props.state.needsWater;
-      console.log(this.props.state);
-      
-
-      if (plants.length <1 ) {
-        return <div>You have no plants</div>;
-      } else {
-          plants.map((plant) => {
-            if(plant.watered === false) 
-            console.log('needs water')
-            this.props.isWatered(false);
-          }
-          )}
-        
-        // return plants.map(plant => {
-        //   if (plant.watered === false) {
-        //     
-        //   } else {
-        //    
-        //   }
-        // });
-      }
-
-    return (
-      <div className="App">
-        <h1>{watermap()}</h1>
-      </div>
-    );
-  }
-}
 
 class Home extends Component {
   /*this timer below is now working and sets alarm the time and date as
@@ -70,43 +22,33 @@ class Home extends Component {
     }
 
     */
-//    if (condition1) {
-//     block of code to be executed if condition1 is true
-// } else if (condition2) {
-//     block of code to be executed if the condition1 is false and condition2 is true
-// } else {
-//     block of code to be executed if the condition1 is false and condition2 is false
-// }
+  //    if (condition1) {
+  //     block of code to be executed if condition1 is true
+  // } else if (condition2) {
+  //     block of code to be executed if the condition1 is false and condition2 is true
+  // } else {
+  //     block of code to be executed if the condition1 is false and condition2 is false
+  // }
 
-   renderClass (context) {
-    
+  renderClass(context) {
+    console.log(context.needsWater)
     if (context.needsWater === false) {
-      return (
-        'background-watered'
-      )
+      return 'background-watered';
     } else if (context.needsWater === true) {
-      return (
-        'background-notwatered'
-      )
+      return 'background-notwatered';
     } else {
-      return 'background-neutral'
+      return 'background-neutral';
     }
-    
-    } 
+  }
 
-  
+
 
   render() {
-
-    
-      
-    
-
     return (
       <AppConsumer>
         {context => (
           <div className={this.renderClass(context.state)}>
-            <Water plants={context.state.plants} state={context.state} isWatered={context.isWatered}/>
+           
             <Link to="/yourplants">Your plants</Link>
             <br />
             <br />
