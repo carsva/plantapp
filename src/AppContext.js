@@ -7,6 +7,7 @@ const defaultPlant = {
         amount: 2,
         timesPerMonth: 3,
         picture: './../plant.jpg',
+        watered: true
 };
 
 const MakeNewPlant = () => {

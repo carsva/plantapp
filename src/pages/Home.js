@@ -2,8 +2,51 @@ import React, { Component } from 'react';
 import { AppConsumer } from '../AppContext';
 import { Link } from 'react-router-dom';
 
-class Home extends Component {
+class Water extends Component {
+  render() {
+    
 
+    // newPlant = values => {
+    //   console.log('values', values)
+    //   this.setState({
+    //     ...this.state,
+    //     plants: [
+    //       ...this.state.plants,
+    //       {
+    //       ...MakeNewPlant(),
+    //       ...values,
+    //       },
+    //     ],
+    //   });
+    // };
+
+var watermap = () => {
+
+  var plants = this.props.plants;
+
+plants.map((plant) => {
+  if (plant.watered === false) {
+
+    console.log(plant.name + ' needs water')
+  } else {
+    console.log(plant.name + ' is happy')
+  }
+  
+
+}) 
+
+
+}
+    return(
+      <div className="App">
+        Hello
+        {watermap()}
+      </div>
+    )
+  }
+}
+
+class Home extends Component {
   /*this timer below is now working and sets alarm the time and date as
   in the code below. The timer starts with getting the current time. We
   create the variable millistill10 and sets it to the same day as now
@@ -24,10 +67,13 @@ class Home extends Component {
     */
 
   render() {
+    const isWatered = () => {};
+
     return (
       <AppConsumer>
         {context => (
           <div className="App background-watered">
+          <Water plants={context.state.plants}/>
             <h3>Wee! All your plants are watered</h3>
             <Link to="/yourplants">Your plants</Link>
             <br />
