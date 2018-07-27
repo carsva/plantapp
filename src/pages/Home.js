@@ -40,6 +40,16 @@ class Home extends Component {
     }
   }
 
+  renderTitle(context) {
+    if (context.anyPlantNeedWater === false) {
+      return <h1>Your plants are happy</h1>
+    } else if (context.anyPlantNeedWater === true) {
+      return <h1>Your plants are not feeling well</h1>
+    } else {
+      return <h1>You have no plants</h1>
+    }
+  }
+
   render() {
 
     return (
@@ -48,6 +58,7 @@ class Home extends Component {
         {context => (
           
           <div className={this.renderClass(context.state)}>
+            {this.renderTitle(context.state)}
             <Link to="/yourplants">Your plants</Link>
             <br />
             <br />

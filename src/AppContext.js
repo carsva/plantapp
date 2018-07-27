@@ -24,10 +24,10 @@ export class AppProvider extends React.Component {
         amount: 2,
         timesPerMonth: 3,
         picture: './../plant.jpg',
-        plantNeedWater: false
+        plantNeedWater: true
       },
     ],
-    anyPlantNeedWater: false,
+    anyPlantNeedWater: true,
   };
 
   // testFunction = () => {
