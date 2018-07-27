@@ -31,24 +31,23 @@ class Home extends Component {
   // }
 
   renderClass(context) {
-    console.log(context.needsWater)
-    if (context.needsWater === false) {
+    if (context.anyPlantNeedWater === false) {
       return 'background-watered';
-    } else if (context.needsWater === true) {
+    } else if (context.anyPlantNeedWater === true) {
       return 'background-notwatered';
     } else {
       return 'background-neutral';
     }
   }
 
-
-
   render() {
+
     return (
+      
       <AppConsumer>
         {context => (
+          
           <div className={this.renderClass(context.state)}>
-           
             <Link to="/yourplants">Your plants</Link>
             <br />
             <br />

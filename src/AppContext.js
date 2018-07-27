@@ -24,10 +24,10 @@ export class AppProvider extends React.Component {
         amount: 2,
         timesPerMonth: 3,
         picture: './../plant.jpg',
-        watered: false
+        plantNeedWater: false
       },
     ],
-    needsWater: true,
+    anyPlantNeedWater: false,
   };
 
   // testFunction = () => {
@@ -49,15 +49,32 @@ export class AppProvider extends React.Component {
     });
   };
 
+  AnyPlantNeedWater = value => {
+    if(this.state.anyPlantNeedWater === false) {
+    this.setState({
+        anyPlantNeedWater: true
+    }) 
+  }
+  }
+
+
+  PlantNeedWater = () => {
+   this.state.plants.map((plant) => {
+     if(plant.plantNeedWater === true)
+     this.AnyPlantNeedWater(true)
+   })
+}
+
 
   render() {
-   
-    console.log(this.state)
+
+    this.PlantNeedWater();
+
     const value = {
       state: {
         ...this.state,
         newPlant: this.newPlant,
-        isWatered: this.isWatered,
+        changeWaterStatus: this.changeWaterStatus,
       },
       
   }
