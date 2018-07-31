@@ -14,6 +14,8 @@ class AddPlant extends Component {
     return (
       <AppConsumer>
         {context => (
+          <div>
+          <h1 className="center topspace">Add a plant</h1>
           <div className="App">
             <form
 							onSubmit={e => {
@@ -21,15 +23,20 @@ class AddPlant extends Component {
 
 								const values = {
 									name: e.target.name.value,
-									amount: e.target.amount.value,
-									timesPerMonth: e.target.timesPerMonth.value,
+									amount: parseInt(e.target.amount.value),
+                  timesPerMonth: parseInt(e.target.timesPerMonth.value),
+                  picture: e.target.picture.value,
+                  plantNeedWater: e.target.picture.value,
 								};
 
 								context.state.newPlant(values);
 							}}
 						>
+              
               <input type="text" name="name" placeholder="Name" />
 							<br />
+              <input type="hidden" name="plantNeedWater" value="false"/>
+              <input type="hidden" name="picture" value="./../plant.jpg"/>
               <select name="amount">
                 <option value="0">Amount of water (dl):</option>
                 <option value="1">1</option>
@@ -69,9 +76,11 @@ class AddPlant extends Component {
               <pre>{JSON.stringify(context, null, 4)}</pre>
             </div>
           </div>
+          </div>
         )}
       </AppConsumer>
     );
+    
   }
 }
 

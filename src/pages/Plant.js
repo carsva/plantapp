@@ -9,7 +9,7 @@ class Plant extends Component {
     return (
       <AppConsumer>
         {context => (
-          <div className="App">
+          <div className="state">
             <h3>The plant {paramId}'s page</h3>
             {context.state.plants.map(plant => {
               if (plant.name === paramId) {
