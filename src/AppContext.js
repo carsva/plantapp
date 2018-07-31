@@ -24,17 +24,15 @@ export class AppProvider extends React.Component {
         amount: 2,
         timesPerMonth: 3,
         picture: './../plant.jpg',
-        plantNeedWater: true
+        plantNeedWater: null
       },
     ],
-    anyPlantNeedWater: true,
+    anyPlantNeedWater: null
   };
 
   // testFunction = () => {
   //   alert('test')
   // }
-
- 
 
   newPlant = values => {
     this.setState({
@@ -49,26 +47,33 @@ export class AppProvider extends React.Component {
     });
   };
 
-  AnyPlantNeedWater = value => {
-    if(this.state.anyPlantNeedWater === false) {
-    this.setState({
-        anyPlantNeedWater: true
-    }) 
-  }
-  }
-
+  AnyPlantNeedWater = (value) => {
+    if (value !== this.state.anyPlantNeedWater) {
+      this.setState({ anyPlantNeedWater: value })
+    }
+    console.log(this.state.anyPlantNeedWater)
+    console.log(this.state)
+  };
 
   PlantNeedWater = () => {
-   this.state.plants.map((plant) => {
-     if(plant.plantNeedWater === true)
-     this.AnyPlantNeedWater(true)
-   })
-}
+    if (this.state.plants) {
+      console.log('there is a plant');
+      this.state.plants.map((plant) => {
+        if (plant.plantNeedWater === true) {
+          this.AnyPlantNeedWater(true);
+        } else {
+          this.AnyPlantNeedWater(false);
+        }
+      });
+    } 
+  };
 
+  componentWillMount() {
+    this.PlantNeedWater();
+  }
 
   render() {
-
-    this.PlantNeedWater();
+    
 
     const value = {
       state: {
@@ -76,8 +81,7 @@ export class AppProvider extends React.Component {
         newPlant: this.newPlant,
         changeWaterStatus: this.changeWaterStatus,
       },
-      
-  }
+    };
 
     return (
       <AppContext.Provider value={value}>
