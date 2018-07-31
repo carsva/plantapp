@@ -16,6 +16,7 @@ html {
 
 h1:first-child {
   margin-top: 50px;
+  text-align: center;
 }
 
 h1:last-child {

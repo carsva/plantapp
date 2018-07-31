@@ -51,13 +51,10 @@ export class AppProvider extends React.Component {
     if (value !== this.state.anyPlantNeedWater) {
       this.setState({ anyPlantNeedWater: value })
     }
-    console.log(this.state.anyPlantNeedWater)
-    console.log(this.state)
   };
 
   PlantNeedWater = () => {
     if (this.state.plants) {
-      console.log('there is a plant');
       this.state.plants.map((plant) => {
         if (plant.plantNeedWater === true) {
           this.AnyPlantNeedWater(true);
@@ -67,6 +64,11 @@ export class AppProvider extends React.Component {
       });
     } 
   };
+
+  GiveThePlantWater = (value) => {
+    console.log('Givetheplantwater is called')
+  };
+
 
   componentWillMount() {
     this.PlantNeedWater();
@@ -79,7 +81,7 @@ export class AppProvider extends React.Component {
       state: {
         ...this.state,
         newPlant: this.newPlant,
-        changeWaterStatus: this.changeWaterStatus,
+        GiveThePlantWater: this.GiveThePlantWater,
       },
     };
 

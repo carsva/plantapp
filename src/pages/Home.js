@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { AppConsumer } from '../AppContext';
 import { Link } from 'react-router-dom';
-
+import PlantPop from './../components/PlantPop';
 
 class Home extends Component {
   /*this timer below is now working and sets alarm the time and date as
@@ -42,23 +42,28 @@ class Home extends Component {
 
   renderTitle(context) {
     if (context.anyPlantNeedWater === false) {
-      return <h1>Your plants are happy</h1>
+      return <h1>Your plants are happy</h1>;
     } else if (context.anyPlantNeedWater === true) {
-      return <h1>Your plants are not feeling well</h1>
+      return <h1>Your plants are not feeling well</h1>;
     } else {
-      return <h1>You have no plants</h1>
+      return <h1>You have no plants</h1>;
     }
   }
 
   render() {
-
     return (
-      
       <AppConsumer>
         {context => (
-          
           <div className={this.renderClass(context.state)}>
             {this.renderTitle(context.state)}
+            <div className="center">
+            {context.state.plants.map((plant) => {
+              return (
+                <PlantPop name={plant.name} key={plant.name} amount={plant.amount}/>
+              )
+            })}
+              
+            </div>
             <Link to="/yourplants">Your plants</Link>
             <br />
             <br />

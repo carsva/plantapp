@@ -13,7 +13,7 @@ class App extends Component {
     return (
       <AppProvider>
         <Router>
-          <div className="center">
+          <div>
             <div>
               <Switch>
                 <Route path="/" exact component={Start} />
