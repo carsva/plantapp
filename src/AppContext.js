@@ -12,6 +12,13 @@ export class AppProvider extends React.Component {
         picture: './../plant.jpg',
         plantNeedWater: true,
       },
+      {
+        name: 'Ted',
+        amount: 2,
+        timesPerMonth: 3,
+        picture: './../plant.jpg',
+        plantNeedWater: true,
+      },
     ],
     anyPlantNeedWater: null,
   };
@@ -34,22 +41,25 @@ export class AppProvider extends React.Component {
   };
 
   AnyPlantNeedWater = value => {
-    if (value !== this.state.anyPlantNeedWater) {
+      console.log('called')
       this.setState({ anyPlantNeedWater: value });
-    }
   };
 
+  
+
+
   PlantNeedWater = () => {
-    if (this.state.plants) {
-      this.state.plants.map(plant => {
-        if (plant.plantNeedWater === true) {
-          this.AnyPlantNeedWater(true);
-        } else {
-          this.AnyPlantNeedWater(false);
-        }
-      });
+    console.log('called')
+    let plants = this.state.plants;
+    let thirstyPlants = plants.map(plant => plant.plantNeedWater);
+    if (thirstyPlants.includes(true)) {
+      this.AnyPlantNeedWater(true)
+    } else {
+      this.AnyPlantNeedWater(false)
     }
-  };
+
+  }
+
 
   // ThirstyToHappy = name => {
   //   console.log(name + ' went from thirsty to happy');
@@ -114,7 +124,8 @@ document.body.innerHTML = randomItem;
         ...this.state,
         newPlant: this.newPlant,
         ThirstyToHappy: this.ThirstyToHappy,
-        PlantNeedWater: this.PlantNeedWater
+        PlantNeedWater: this.PlantNeedWater,
+        test: this.test,
       },
     };
 

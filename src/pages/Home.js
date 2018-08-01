@@ -70,7 +70,6 @@ class Home extends Component {
     myNewState.plants = myNewSomething;
 
     this.setState(myNewState);
-
     something.state.PlantNeedWater();
 
     
@@ -107,6 +106,7 @@ class Home extends Component {
             <Link to="/addplant">
               <button className="center">Add a plant</button>
             </Link>
+            <button onClick={context.state.test}>Test</button>
             {/* <button onClick={this.timer}>Set Alarm</button> */}
             <div className="state space">
               <h3>Data that lives in the context</h3>
