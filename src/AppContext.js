@@ -2,24 +2,33 @@ import React from 'react';
 
 export const AppContext = React.createContext('plant');
 
+let plants = [
+      {
+        name: 'Ebba',
+        amount: 2,
+        timesPerMonth: 3,
+        picture: './../plant.jpg',
+        plantNeedWater: true,
+      },
+      {
+        name: 'Didrik',
+        amount: 2,
+        timesPerMonth: 3,
+        picture: './../plant.jpg',
+        plantNeedWater: true,
+      },
+];
+
+localStorage.plants = JSON.stringify(plants);
+
+  if (localStorage.plants) {
+    let localPlants = JSON.parse(localStorage.plants);
+    plants = localPlants;
+  }
+
 export class AppProvider extends React.Component {
   state = {
-    plants: [
-      {
-        name: 'Bill',
-        amount: 2,
-        timesPerMonth: 3,
-        picture: './../plant.jpg',
-        plantNeedWater: true,
-      },
-      {
-        name: 'Ted',
-        amount: 2,
-        timesPerMonth: 3,
-        picture: './../plant.jpg',
-        plantNeedWater: true,
-      },
-    ],
+    plants: plants,
     anyPlantNeedWater: null,
   };
 
@@ -119,6 +128,7 @@ document.body.innerHTML = randomItem;
   }
 
   render() {
+    console.log(JSON.stringify(plants))
     const value = {
       state: {
         ...this.state,
