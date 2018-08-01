@@ -2,24 +2,25 @@ import React from 'react';
 
 export const AppContext = React.createContext('plant');
 
-let plants = [
-      {
-        name: 'Ebba',
-        amount: 2,
-        timesPerMonth: 3,
-        picture: './../plant.jpg',
-        plantNeedWater: true,
-      },
-      {
-        name: 'Didrik',
-        amount: 2,
-        timesPerMonth: 3,
-        picture: './../plant.jpg',
-        plantNeedWater: true,
-      },
-];
+// let plants = [
+//       {
+//         name: 'Ebba',
+//         amount: 2,
+//         timesPerMonth: 3,
+//         picture: './../plant.jpg',
+//         plantNeedWater: true,
+//       },
+//       {
+//         name: 'Didrik',
+//         amount: 2,
+//         timesPerMonth: 3,
+//         picture: './../plant.jpg',
+//         plantNeedWater: true,
+//       },
+// ];
 
-localStorage.plants = JSON.stringify(plants);
+// localStorage.plants = JSON.stringify(plants);
+  let plants = [];
 
   if (localStorage.plants) {
     let localPlants = JSON.parse(localStorage.plants);
@@ -32,25 +33,49 @@ export class AppProvider extends React.Component {
     anyPlantNeedWater: null,
   };
 
-  // testFunction = () => {
-  //   alert('test')
-  // }
 
-  newPlant = values => {
-    this.setState({
-      ...this.state,
-      plants: [
-        ...this.state.plants,
-        {
-          // ...MakeNewPlant(),
-          ...values,
-        },
-      ],
-    });
-  };
+    test = plant => {
+    console.log('p')
+    console.log(plant)
+
+
+
+    // deleteIceCream(flavour) {
+    //   let iceCream = this.state.iceCream;
+    
+    //   let filteredIceCream = iceCream.filter(iceCream => {
+    //     return iceCream.flavour !== flavour;
+    //   })
+    //   this.setState ({
+    //     iceCream: filteredIceCream
+    //   })
+    //   localStorage.iceCream = JSON.stringify(filteredIceCream);
+    
+    // }
+    };
+ 
+    newPlant = (values) => {
+      let plants = this.state.plants;
+      plants.push({
+        name: values.name,
+        amount: values.amount,
+        timesPerMonth: values.timesPerMonth,
+        picture: values.picture,
+        plantNeedWater: values.plantNeedWater
+      })
+
+      this.setState ({
+        plants: plants
+      })
+      localStorage.plants = JSON.stringify(plants);
+      console.log(localStorage.plants)
+      console.log(plants)
+      this.PlantNeedWater();
+    } 
+
+
 
   AnyPlantNeedWater = value => {
-      console.log('called')
       this.setState({ anyPlantNeedWater: value });
   };
 
@@ -58,42 +83,16 @@ export class AppProvider extends React.Component {
 
 
   PlantNeedWater = () => {
-    console.log('called')
     let plants = this.state.plants;
     let thirstyPlants = plants.map(plant => plant.plantNeedWater);
-    if (thirstyPlants.includes(true)) {
-      this.AnyPlantNeedWater(true)
+    if (thirstyPlants.includes('true')) {
+      this.AnyPlantNeedWater('true')
     } else {
-      this.AnyPlantNeedWater(false)
+      this.AnyPlantNeedWater('false')
     }
 
   }
 
-
-  // ThirstyToHappy = name => {
-  //   console.log(name + ' went from thirsty to happy');
-   
-  //   let plants = this.state.plants;
-  //   plants.map(plant => {
-  //     if (plant.name === name) {
-  //       this.setState({
-  //         plants: [
-  //           {
-  //             name: name,
-  //             amount: 2,
-  //             timesPerMonth: 3,
-  //             picture: './../plant.jpg',
-  //             plantNeedWater: false,
-  //           },
-  //         ],
-  //       });
-  //       console.log(plants)
-  //       this.PlantNeedWater();
-  //     }
-  //   });
-  // };
-
-  /*
 
 editPlant = (id, newValues) => {
     {
@@ -112,23 +111,12 @@ editPlant = (id, newValues) => {
       }),
     });
   };
-var myArray = [
-  "Apples",
-  "Bananas",
-  "Pears"
-];
-
-var randomItem = myArray[Math.floor(Math.random()*myArray.length)];
-
-document.body.innerHTML = randomItem;
-*/
 
   componentWillMount() {
     this.PlantNeedWater();
   }
 
   render() {
-    console.log(JSON.stringify(plants))
     const value = {
       state: {
         ...this.state,

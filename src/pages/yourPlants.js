@@ -10,15 +10,22 @@ let styles = {
 };
 
 class yourPlants extends Component {
+  clickme(plantName) {
+    this.state.test(plantName);
+  }
+
   render() {
     return (
       <AppConsumer>
         {context => (
           <div>
             <h1>Your plants</h1>
-            {context.state.plants.map(({ name }) => (
+            {context.state.plants.map(plant => (
               <div className="center">
-                 <Link to={`/plant/${name}`}>{name}</Link>
+                <Link to={`/plant/${plant.name}`}>{plant.name}</Link>
+                <button onClick={this.clickme.bind(context, plant.name)}>
+                  X
+                </button>
               </div>
             ))}
 

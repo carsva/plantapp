@@ -31,9 +31,9 @@ class Home extends Component {
   // }
 
   renderClass(context) {
-    if (context.anyPlantNeedWater === false) {
+    if (context.anyPlantNeedWater === 'false') {
       return 'background-watered';
-    } else if (context.anyPlantNeedWater === true) {
+    } else if (context.anyPlantNeedWater === 'false') {
       return 'background-notwatered';
     } else {
       return 'background-neutral';
@@ -43,7 +43,7 @@ class Home extends Component {
   renderTitle(context) {
     if (context.anyPlantNeedWater === false) {
       return <h1>Your plants are happy</h1>;
-    } else if (context.anyPlantNeedWater === true) {
+    } else if (context.anyPlantNeedWater === 'true') {
       return <h1>Your plants are not feeling well</h1>;
     } else {
       return <h1>You have no plants</h1>;
@@ -60,7 +60,7 @@ class Home extends Component {
     console.log(something.PlantNeedWater)
     let myNewSomething = something.state.plants.map(element => {
       if (element.name === actuallyTheContext) {
-        element.plantNeedWater = false;
+        element.plantNeedWater = 'false';
       }
       return element;
     });
@@ -85,7 +85,7 @@ class Home extends Component {
             {this.renderTitle(context.state)}
             <div className="center">
               {context.state.plants.map(plant => {
-                if (plant.plantNeedWater === true) {
+                if (plant.plantNeedWater === 'true') {
                   return (
                     <PlantPop
                       name={plant.name}

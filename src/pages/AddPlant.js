@@ -27,7 +27,7 @@ class AddPlant extends Component {
 									amount: parseInt(e.target.amount.value),
                   timesPerMonth: parseInt(e.target.timesPerMonth.value),
                   picture: e.target.picture.value,
-                  plantNeedWater: e.target.picture.value,
+                  plantNeedWater: e.target.plantNeedWater.value,
 								};
 
 								context.state.newPlant(values);
@@ -36,7 +36,7 @@ class AddPlant extends Component {
               
               <input type="text" name="name" placeholder="Name" />
 							<br />
-              <input type="hidden" name="plantNeedWater" value="false"/>
+              <input type="hidden" name="plantNeedWater" value="true"/>
               <input type="hidden" name="picture" value="./../plant.jpg"/>
               <select name="amount">
                 <option value="0">Amount of water (dl):</option>
