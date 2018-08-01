@@ -12,13 +12,6 @@ export class AppProvider extends React.Component {
         picture: './../plant.jpg',
         plantNeedWater: true,
       },
-      {
-        name: 'Ted',
-        amount: 2,
-        timesPerMonth: 3,
-        picture: './../plant.jpg',
-        plantNeedWater: true,
-      },
     ],
     anyPlantNeedWater: null,
   };
@@ -58,22 +51,48 @@ export class AppProvider extends React.Component {
     }
   };
 
-    ThirstyToHappy(name) {
-      console.log(name + ' went from thirsty to happy')
-      /*
-      let plants = this.state.plants;
-    
-      let filteredIceCream = iceCream.filter(iceCream => {
-        return iceCream.flavour !== flavour;
-      })
-      this.setState ({
-        iceCream: filteredIceCream
-      })
-      localStorage.iceCream = JSON.stringify(filteredIceCream);
-*/
-  }
+  // ThirstyToHappy = name => {
+  //   console.log(name + ' went from thirsty to happy');
+   
+  //   let plants = this.state.plants;
+  //   plants.map(plant => {
+  //     if (plant.name === name) {
+  //       this.setState({
+  //         plants: [
+  //           {
+  //             name: name,
+  //             amount: 2,
+  //             timesPerMonth: 3,
+  //             picture: './../plant.jpg',
+  //             plantNeedWater: false,
+  //           },
+  //         ],
+  //       });
+  //       console.log(plants)
+  //       this.PlantNeedWater();
+  //     }
+  //   });
+  // };
 
-/*
+  /*
+
+editPlant = (id, newValues) => {
+    {
+    }
+
+    this.setState({
+      ...this.state,
+      plants: this.state.plants.map(plant => {
+        if (plant.id === id) {
+          return {
+            ...plant,
+            ...newValues,
+          };
+        }
+        return plant;
+      }),
+    });
+  };
 var myArray = [
   "Apples",
   "Bananas",
@@ -95,7 +114,7 @@ document.body.innerHTML = randomItem;
         ...this.state,
         newPlant: this.newPlant,
         ThirstyToHappy: this.ThirstyToHappy,
-
+        PlantNeedWater: this.PlantNeedWater
       },
     };
 

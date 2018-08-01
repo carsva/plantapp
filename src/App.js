@@ -17,11 +17,10 @@ class App extends Component {
             <div>
               <Switch>
                 <Route path="/" exact component={Start} />
-                    <Route path="/home" exact component={Home} />
-                    <Route path="/addplant" exact component={AddPlant} />
-                    <Route path="/yourplants" exact component={yourPlants} />
-                    <Route path="/plant/:id" component={Plant} />
-
+                <Route path="/home" exact component={Home} />
+                <Route path="/addplant" exact component={AddPlant} />
+                <Route path="/yourplants" exact component={yourPlants} />
+                <Route path="/plant/:id" component={Plant} />
               </Switch>
             </div>
           </div>

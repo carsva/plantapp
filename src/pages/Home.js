@@ -50,9 +50,34 @@ class Home extends Component {
     }
   }
 
-  render() {
-    
+  clickme(something, actuallyTheContext) {
+    console.log(
+      'ingenting',
+      something,
+      ' och plantans name:',
+      actuallyTheContext,
+    );
+    console.log(something.PlantNeedWater)
+    let myNewSomething = something.state.plants.map(element => {
+      if (element.name === actuallyTheContext) {
+        element.plantNeedWater = false;
+      }
+      return element;
+    });
 
+    let myNewState = something.state;
+
+    myNewState.plants = myNewSomething;
+
+    this.setState(myNewState);
+
+    something.state.PlantNeedWater();
+
+    
+    
+  }
+
+  render() {
 
     return (
       <AppConsumer>
@@ -68,12 +93,15 @@ class Home extends Component {
                       key={plant.name}
                       amount={plant.amount}
                       ThirstyToHappy={context.state.ThirstyToHappy}
+                      blabla={this.clickme.bind(this, context)}
                     />
                   );
                 }
               })}
             </div>
-            <Link className="center" to="/yourplants">Your plants</Link>
+            <Link className="center" to="/yourplants">
+              Your plants
+            </Link>
             <br />
             <br />
             <Link to="/addplant">
