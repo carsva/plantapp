@@ -2,20 +2,6 @@ import React from 'react';
 
 export const AppContext = React.createContext('plant');
 
-// const defaultPlant = {
-//         name: 'Bill',
-//         amount: 2,
-//         timesPerMonth: 3,
-//         picture: './../plant.jpg',
-//         watered: true
-// };
-
-// const MakeNewPlant = () => {
-//     return {
-//       ...defaultPlant,
-//     };
-//   };
-
 export class AppProvider extends React.Component {
   state = {
     plants: [
@@ -24,10 +10,17 @@ export class AppProvider extends React.Component {
         amount: 2,
         timesPerMonth: 3,
         picture: './../plant.jpg',
-        plantNeedWater: null
+        plantNeedWater: true,
+      },
+      {
+        name: 'Ted',
+        amount: 2,
+        timesPerMonth: 3,
+        picture: './../plant.jpg',
+        plantNeedWater: true,
       },
     ],
-    anyPlantNeedWater: null
+    anyPlantNeedWater: null,
   };
 
   // testFunction = () => {
@@ -47,41 +40,62 @@ export class AppProvider extends React.Component {
     });
   };
 
-  AnyPlantNeedWater = (value) => {
+  AnyPlantNeedWater = value => {
     if (value !== this.state.anyPlantNeedWater) {
-      this.setState({ anyPlantNeedWater: value })
+      this.setState({ anyPlantNeedWater: value });
     }
   };
 
   PlantNeedWater = () => {
     if (this.state.plants) {
-      this.state.plants.map((plant) => {
+      this.state.plants.map(plant => {
         if (plant.plantNeedWater === true) {
           this.AnyPlantNeedWater(true);
         } else {
           this.AnyPlantNeedWater(false);
         }
       });
-    } 
+    }
   };
 
-  GiveThePlantWater = (value) => {
-    console.log('Givetheplantwater is called')
-  };
+    ThirstyToHappy(name) {
+      console.log(name + ' went from thirsty to happy')
+      /*
+      let plants = this.state.plants;
+    
+      let filteredIceCream = iceCream.filter(iceCream => {
+        return iceCream.flavour !== flavour;
+      })
+      this.setState ({
+        iceCream: filteredIceCream
+      })
+      localStorage.iceCream = JSON.stringify(filteredIceCream);
+*/
+  }
 
+/*
+var myArray = [
+  "Apples",
+  "Bananas",
+  "Pears"
+];
+
+var randomItem = myArray[Math.floor(Math.random()*myArray.length)];
+
+document.body.innerHTML = randomItem;
+*/
 
   componentWillMount() {
     this.PlantNeedWater();
   }
 
   render() {
-    
-
     const value = {
       state: {
         ...this.state,
         newPlant: this.newPlant,
-        GiveThePlantWater: this.GiveThePlantWater,
+        ThirstyToHappy: this.ThirstyToHappy,
+
       },
     };
 

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { AppConsumer } from '../AppContext';
-import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 let styles = {
   backgroundColor: 'yellow',

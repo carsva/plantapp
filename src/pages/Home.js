@@ -51,24 +51,33 @@ class Home extends Component {
   }
 
   render() {
+    
+
+
     return (
       <AppConsumer>
         {context => (
           <div className={this.renderClass(context.state)}>
             {this.renderTitle(context.state)}
             <div className="center">
-            {context.state.plants.map((plant) => {
-              return (
-                <PlantPop name={plant.name} key={plant.name} amount={plant.amount}/>
-              )
-            })}
-              
+              {context.state.plants.map(plant => {
+                if (plant.plantNeedWater === true) {
+                  return (
+                    <PlantPop
+                      name={plant.name}
+                      key={plant.name}
+                      amount={plant.amount}
+                      ThirstyToHappy={context.state.ThirstyToHappy}
+                    />
+                  );
+                }
+              })}
             </div>
-            <Link to="/yourplants">Your plants</Link>
+            <Link className="center" to="/yourplants">Your plants</Link>
             <br />
             <br />
             <Link to="/addplant">
-              <button>Add a plant</button>
+              <button className="center">Add a plant</button>
             </Link>
             {/* <button onClick={this.timer}>Set Alarm</button> */}
             <div className="state space">
