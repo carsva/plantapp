@@ -7,6 +7,7 @@ let styles = {
   textAlign: 'center',
   paddingTop: '10px',
   paddingBottom: '10px',
+  marginTop: '50px',
 };
 
 class AddPlant extends Component {
@@ -16,8 +17,8 @@ class AddPlant extends Component {
         {context => (
           <div>
           <h1 className="center topspace">Add a plant</h1>
-          <div className="App">
-            <form
+          <div>
+            <form className="center"
 							onSubmit={e => {
 								e.preventDefault();
 
@@ -65,10 +66,10 @@ class AddPlant extends Component {
                 <option value="10">10</option>
               </select>
               <br />
-              <button>Add plant</button>
+              <button >Add plant</button>
             </form>
             <Link to="/home">
-              <button>Back</button>
+              <button className="center topspace">Back</button>
             </Link>
 
             <div style={styles}>

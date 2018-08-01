@@ -14,16 +14,16 @@ class yourPlants extends Component {
     return (
       <AppConsumer>
         {context => (
-          <div className="App">
-            <p>Your plants</p>
+          <div>
+            <h1>Your plants</h1>
             {context.state.plants.map(({ name }) => (
-              <div>
+              <div className="center">
                  <Link to={`/plant/${name}`}>{name}</Link>
               </div>
             ))}
 
             <Link to="/home">
-              <button>Back</button>
+              <button className="center topspace">Back</button>
             </Link>
             <div className="state">
               <h3>Data that lives in the context</h3>
