@@ -15,8 +15,26 @@ export class AppProvider extends React.Component {
     anyPlantNeedWater: null,
   };
 
-  test = plantname => {
+  test = interval => {
     console.log('test is called');
+    var now = new Date();
+    var futureDate = new Date(
+      now.getFullYear(),
+      now.getMonth(),
+      now.getDate(),
+      7,
+      55,
+      0,
+      0,
+    );
+
+    var millisecondsLeft = futureDate - now;
+
+    setTimeout(alertFunc, millisecondsLeft);
+
+    function alertFunc() {
+      alert('Works');
+    }
   };
 
   deletePlant = plantname => {
@@ -76,8 +94,7 @@ export class AppProvider extends React.Component {
         ThirstyToHappy: this.ThirstyToHappy,
         PlantNeedWater: this.PlantNeedWater,
         test: this.test,
-        deletePlant: this.deletePlant
-        
+        deletePlant: this.deletePlant,
       },
     };
 
