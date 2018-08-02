@@ -23,18 +23,10 @@ class Home extends Component {
       return <h1>Your plants are not feeling well</h1>;
     } else if (context.anyPlantNeedWater === false) {
       return <h1>Your plants are feeling well</h1>;
-      console.log('hello')
     }
   }
 
   clickme(something, actuallyTheContext) {
-    console.log(
-      'ingenting',
-      something,
-      ' och plantans name:',
-      actuallyTheContext,
-    );
-    console.log(something.PlantNeedWater)
     let myNewSomething = something.state.plants.map(element => {
       if (element.name === actuallyTheContext) {
         element.plantNeedWater = false;
@@ -48,7 +40,6 @@ class Home extends Component {
 
     this.setState(myNewState);
     localStorage.plants = JSON.stringify(myNewState.plants);
-    console.log(myNewState)
     something.state.PlantNeedWater();
 
     

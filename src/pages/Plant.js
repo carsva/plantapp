@@ -38,14 +38,3 @@ class Plant extends Component {
 }
 
 export default Plant;
-
-// {context.state.plants.map(plant => {
-//   if(plant.name === paramId) {
-//     console.log(plant.name)
-//     console.log(plant.picture)
-//     console.log(plant.amount)
-//     console.log(plant.timesPerMonth)
-//   } else {
-
-//   }
-// })}

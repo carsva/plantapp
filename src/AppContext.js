@@ -20,14 +20,12 @@ export class AppProvider extends React.Component {
   };
 
   deletePlant = plantname => {
-    console.log(plantname);
     let plants = this.state.plants;
 
     let filteredPlants = plants.filter(plant => {
       return plant.name !== plantname;
     });
 
-    console.log(filteredPlants);
     this.setState({
       plants: filteredPlants,
     });
@@ -49,8 +47,6 @@ export class AppProvider extends React.Component {
       plants: plants,
     });
     localStorage.plants = JSON.stringify(plants);
-    console.log(localStorage.plants);
-    console.log(plants);
     this.PlantNeedWater();
   };
 
@@ -61,7 +57,6 @@ export class AppProvider extends React.Component {
   PlantNeedWater = () => {
     let plants = this.state.plants;
     let thirstyPlants = plants.map(plant => plant.plantNeedWater);
-    console.log(thirstyPlants)
     if (thirstyPlants.includes(true)) {
       this.AnyPlantNeedWater(true);
     } else {
