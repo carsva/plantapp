@@ -16,25 +16,24 @@ export class AppProvider extends React.Component {
   };
 
   test = interval => {
-    console.log('test is called');
-    var now = new Date();
-    var futureDate = new Date(
-      now.getFullYear(),
-      now.getMonth(),
-      now.getDate(),
-      7,
-      55,
-      0,
-      0,
-    );
+    // console.log('test is called');
+    // var now = new Date();
+    // var futureDate = new Date(
+    //   now.getFullYear(),
+    //   now.getMonth(),
+    //   now.getDate(),
+    //   7,
+    //   55,
+    //   0,
+    //   0,
+    // );
 
-    var millisecondsLeft = futureDate - now;
+    // var millisecondsLeft = futureDate - now;
 
+    let plants = this.state.plants;
+    console.log(plants);
 
-    let plants = this.state.plants;  
-    console.log(plants)
-
-//Mockey is just the test name so you can past whatever name there.
+    //Mockey is just the test name so you can past whatever name there.
 
     let UpdatedPlants = plants.map(plant => {
       if (plant.name === 'Mockey') {
@@ -44,12 +43,10 @@ export class AppProvider extends React.Component {
     });
 
     setTimeout(() => {
-      this.setState({ plants: UpdatedPlants })
+      this.setState({ plants: UpdatedPlants });
       localStorage.plants = JSON.stringify(UpdatedPlants);
       this.PlantNeedWater();
-    }, 2000)
-
-    
+    }, 2000);
   };
 
   deletePlant = plantname => {
@@ -68,13 +65,12 @@ export class AppProvider extends React.Component {
 
   newPlant = values => {
     let plants = this.state.plants;
-    let milliSecondsToWatering = () => {
-      
-    }
+
     plants.push({
       name: values.name,
       amount: values.amount,
       waterInterval: values.waterInterval,
+      timeToWatering: values.waterInterval * 60000,
       picture: values.picture,
       plantNeedWater: values.plantNeedWater,
     });
