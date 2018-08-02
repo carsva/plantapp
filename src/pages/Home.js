@@ -41,7 +41,7 @@ class Home extends Component {
   }
 
   renderTitle(context) {
-    if (context.anyPlantNeedWater === false) {
+    if (context.anyPlantNeedWater === 'false') {
       return <h1>Your plants are happy</h1>;
     } else if (context.anyPlantNeedWater === 'true') {
       return <h1>Your plants are not feeling well</h1>;
@@ -70,6 +70,8 @@ class Home extends Component {
     myNewState.plants = myNewSomething;
 
     this.setState(myNewState);
+    localStorage.plants = JSON.stringify(myNewState.plants);
+    console.log(myNewState)
     something.state.PlantNeedWater();
 
     

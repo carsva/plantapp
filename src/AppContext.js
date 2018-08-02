@@ -20,12 +20,12 @@ export const AppContext = React.createContext('plant');
 // ];
 
 // localStorage.plants = JSON.stringify(plants);
-  let plants = [];
+let plants = [];
 
-  if (localStorage.plants) {
-    let localPlants = JSON.parse(localStorage.plants);
-    plants = localPlants;
-  }
+if (localStorage.plants) {
+  let localPlants = JSON.parse(localStorage.plants);
+  plants = localPlants;
+}
 
 export class AppProvider extends React.Component {
   state = {
@@ -33,93 +33,57 @@ export class AppProvider extends React.Component {
     anyPlantNeedWater: null,
   };
 
-
-    test = plantname => {
-    console.log(plantname)
-    let plants = this.state.plants;
-
-  let filteredPlants = plants.filter(plant => {
-    return plant.name !== plantname;
-  })
-
-  console.log(filteredPlants)
-  this.setState ({
-    plants: filteredPlants
-  })
-  localStorage.plants = JSON.stringify(filteredPlants);
-
-
-
-    // deleteIceCream(flavour) {
-    //   let iceCream = this.state.iceCream;
-    
-    //   let filteredIceCream = iceCream.filter(iceCream => {
-    //     return iceCream.flavour !== flavour;
-    //   })
-    //   this.setState ({
-    //     iceCream: filteredIceCream
-    //   })
-    //   localStorage.iceCream = JSON.stringify(filteredIceCream);
-    
-    // }
-    };
- 
-    newPlant = (values) => {
-      let plants = this.state.plants;
-      plants.push({
-        name: values.name,
-        amount: values.amount,
-        timesPerMonth: values.timesPerMonth,
-        picture: values.picture,
-        plantNeedWater: values.plantNeedWater
-      })
-
-      this.setState ({
-        plants: plants
-      })
-      localStorage.plants = JSON.stringify(plants);
-      console.log(localStorage.plants)
-      console.log(plants)
-      this.PlantNeedWater();
-    } 
-
-
-
-  AnyPlantNeedWater = value => {
-      this.setState({ anyPlantNeedWater: value });
+  test = plantname => {
+    console.log('test is called');
   };
 
-  
+  deletePlant = plantname => {
+    console.log(plantname);
+    let plants = this.state.plants;
 
+    let filteredPlants = plants.filter(plant => {
+      return plant.name !== plantname;
+    });
+
+    console.log(filteredPlants);
+    this.setState({
+      plants: filteredPlants,
+    });
+    localStorage.plants = JSON.stringify(filteredPlants);
+    this.PlantNeedWater();
+  };
+
+  newPlant = values => {
+    let plants = this.state.plants;
+    plants.push({
+      name: values.name,
+      amount: values.amount,
+      timesPerMonth: values.timesPerMonth,
+      picture: values.picture,
+      plantNeedWater: values.plantNeedWater,
+    });
+
+    this.setState({
+      plants: plants,
+    });
+    localStorage.plants = JSON.stringify(plants);
+    console.log(localStorage.plants);
+    console.log(plants);
+    this.PlantNeedWater();
+  };
+
+  AnyPlantNeedWater = value => {
+    this.setState({ anyPlantNeedWater: value });
+  };
 
   PlantNeedWater = () => {
     let plants = this.state.plants;
     let thirstyPlants = plants.map(plant => plant.plantNeedWater);
     if (thirstyPlants.includes('true')) {
-      this.AnyPlantNeedWater('true')
+      this.AnyPlantNeedWater('true');
     } else {
-      this.AnyPlantNeedWater('false')
+      this.AnyPlantNeedWater('false');
     }
-
-  }
-
-
-editPlant = (id, newValues) => {
-    {
-    }
-
-    this.setState({
-      ...this.state,
-      plants: this.state.plants.map(plant => {
-        if (plant.id === id) {
-          return {
-            ...plant,
-            ...newValues,
-          };
-        }
-        return plant;
-      }),
-    });
   };
 
   componentWillMount() {
@@ -134,6 +98,8 @@ editPlant = (id, newValues) => {
         ThirstyToHappy: this.ThirstyToHappy,
         PlantNeedWater: this.PlantNeedWater,
         test: this.test,
+        deletePlant: this.deletePlant
+        
       },
     };
 

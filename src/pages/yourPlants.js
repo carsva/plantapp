@@ -11,7 +11,7 @@ let styles = {
 
 class yourPlants extends Component {
   clickme(plantName) {
-    this.state.test(plantName);
+    this.state.deletePlant(plantName);
   }
 
   render() {
