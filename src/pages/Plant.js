@@ -17,7 +17,7 @@ class Plant extends Component {
                   <div>
                     <img src={plant.picture}/>
                     Please give it {plant.amount} dl water,{' '}
-                    {plant.timesPerMonth} times a month
+                    {plant.timesPerWeek} times a week
                   </div>
                 );
               }

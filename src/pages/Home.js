@@ -4,31 +4,7 @@ import { Link } from 'react-router-dom';
 import PlantPop from './../components/PlantPop';
 
 class Home extends Component {
-  /*this timer below is now working and sets alarm the time and date as
-  in the code below. The timer starts with getting the current time. We
-  create the variable millistill10 and sets it to the same day as now
-  except we set the alarm to go off at 08:44 am.
 
-  timer() {
-    var now = new Date();
-    var millisTill10 =
-      new Date(now.getFullYear(), now.getMonth(), now.getDate(), 8, 44, 0, 0) -
-      now;
-
-      setTimeout(function() {
-        alert("Alarm");
-      }, millisTill10);
-    
-    }
-
-    */
-  //    if (condition1) {
-  //     block of code to be executed if condition1 is true
-  // } else if (condition2) {
-  //     block of code to be executed if the condition1 is false and condition2 is true
-  // } else {
-  //     block of code to be executed if the condition1 is false and condition2 is false
-  // }
 
   renderClass(context) {
     if (!context.plants[0]) {

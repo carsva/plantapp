@@ -2,24 +2,6 @@ import React from 'react';
 
 export const AppContext = React.createContext('plant');
 
-// let plants = [
-//       {
-//         name: 'Ebba',
-//         amount: 2,
-//         timesPerMonth: 3,
-//         picture: './../plant.jpg',
-//         plantNeedWater: true,
-//       },
-//       {
-//         name: 'Didrik',
-//         amount: 2,
-//         timesPerMonth: 3,
-//         picture: './../plant.jpg',
-//         plantNeedWater: true,
-//       },
-// ];
-
-// localStorage.plants = JSON.stringify(plants);
 let plants = [];
 
 if (localStorage.plants) {
@@ -58,7 +40,7 @@ export class AppProvider extends React.Component {
     plants.push({
       name: values.name,
       amount: values.amount,
-      timesPerMonth: values.timesPerMonth,
+      timesPerWeek: values.timesPerWeek,
       picture: values.picture,
       plantNeedWater: values.plantNeedWater,
     });

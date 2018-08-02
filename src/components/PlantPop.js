@@ -5,19 +5,6 @@ class PlantPop extends Component {
   render() {
     let ThirstyToHappy = event => {
       event.preventDefault();
-      // let values = {
-      //   name: 'Joey',
-      //   amount: 2,
-      //   timesPerMonth: 3,
-      //   picture: './../plant.jpg',
-      //   plantNeedWater: false,
-
-      //   name: this.props.name,
-      //   amount: this.props.amount
-      //   timesPerMonth
-      // }
-      // console.log(values)
-      // this.props.ThirstyToHappy(this.props.name);
       this.props.blabla(this.props.name);
     };
 
