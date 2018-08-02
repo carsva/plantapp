@@ -15,36 +15,53 @@ export class AppProvider extends React.Component {
     anyPlantNeedWater: null,
   };
 
-  test = () => {
-    var dateObj = Date.now();
+
+
+
+
+
+
+  WateringDates = () => {
+    var dateObjOutside = new Date();
+    dateObjOutside = dateObjOutside.toISOString();
+    
 
     let plants = this.state.plants;
-    console.log(plants);
+    
+    console.log(plants[0].wateringDate)
+    console.log(dateObjOutside)
 
-    var date = new Date();
-
-    var mydate = new Date('2016-09-13');
-
-    if (date < mydate) {
-      alert(' The given date is Future Date');
-    } else {
-      alert('The given date is Past Date');
-    }
-    //Mockey is just the test name so you can past whatever name there.
 
     let UpdatedPlants = plants.map(plant => {
-      if ((plant.wateringDate += dateObj)) {
+      if (dateObjOutside > plant.wateringDate) {
+        console.log('runs');
         plant.plantNeedWater = true;
+        var dateObj = Date.now();
+        dateObj += plant.waterInterval * 60000;
+        dateObj = new Date(dateObj);
+        plant.wateringDate = dateObj;
       }
       return plant;
     });
+    // console.log(UpdatedPlants)
+    console.log(plants[0].wateringDate)
 
-    // setTimeout(() => {
-    //   this.setState({ plants: UpdatedPlants });
-    //   localStorage.plants = JSON.stringify(UpdatedPlants);
-    //   this.PlantNeedWater();
-    // }, 2000);
+
+    this.setState({
+      plants: UpdatedPlants,
+    });
+    localStorage.plants = JSON.stringify(UpdatedPlants);
+    // console.log(this.state.plants)
+    // console.log(localStorage.plants)
+
+    this.PlantNeedWater();
   };
+
+
+
+
+
+
 
   deletePlant = plantname => {
     let plants = this.state.plants;
@@ -69,11 +86,11 @@ export class AppProvider extends React.Component {
     //   I'd suggest using the calculated static value instead of doing inline math
     //   I did it this way to simply show where the number came from
     dateObj += values.waterInterval * 60000;
-
+    dateObj = dateObj.toISOString();
     // create a new Date object, using the adjusted time
-    dateObj = new Date(dateObj);
-
-    console.log(dateObj);
+    // dateObj = new Date(dateObj);
+    // date
+    console.log(dateObj)
 
     plants.push({
       name: values.name,
@@ -108,6 +125,7 @@ export class AppProvider extends React.Component {
 
   componentWillMount() {
     this.PlantNeedWater();
+    this.WateringDates();
   }
 
   render() {
@@ -119,6 +137,7 @@ export class AppProvider extends React.Component {
         PlantNeedWater: this.PlantNeedWater,
         test: this.test,
         deletePlant: this.deletePlant,
+        WateringDates: this.WateringDates,
       },
     };
 

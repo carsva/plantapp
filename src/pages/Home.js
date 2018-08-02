@@ -40,6 +40,7 @@ class Home extends Component {
 
     this.setState(myNewState);
     localStorage.plants = JSON.stringify(myNewState.plants);
+
     something.state.PlantNeedWater();
 
     
@@ -76,7 +77,7 @@ class Home extends Component {
             <Link to="/addplant">
               <button className="center">Add a plant</button>
             </Link>
-            <button onClick={context.state.test}>Test</button>
+            <button onClick={context.state.WateringDates}>Test</button>
             {/* <button onClick={this.timer}>Set Alarm</button> */}
             <div className="state space">
               <h3>Data that lives in the context</h3>
