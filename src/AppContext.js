@@ -30,11 +30,26 @@ export class AppProvider extends React.Component {
 
     var millisecondsLeft = futureDate - now;
 
-    setTimeout(alertFunc, millisecondsLeft);
 
-    function alertFunc() {
-      alert('Works');
-    }
+    let plants = this.state.plants;  
+    console.log(plants)
+
+//Mockey is just the test name so you can past whatever name there.
+
+    let UpdatedPlants = plants.map(plant => {
+      if (plant.name === 'Mockey') {
+        plant.plantNeedWater = true;
+      }
+      return plant;
+    });
+
+    setTimeout(() => {
+      this.setState({ plants: UpdatedPlants })
+      localStorage.plants = JSON.stringify(UpdatedPlants);
+      this.PlantNeedWater();
+    }, 2000)
+
+    
   };
 
   deletePlant = plantname => {
@@ -53,6 +68,9 @@ export class AppProvider extends React.Component {
 
   newPlant = values => {
     let plants = this.state.plants;
+    let milliSecondsToWatering = () => {
+      
+    }
     plants.push({
       name: values.name,
       amount: values.amount,
