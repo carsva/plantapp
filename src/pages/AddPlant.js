@@ -25,7 +25,7 @@ class AddPlant extends Component {
 								const values = {
 									name: e.target.name.value,
 									amount: parseInt(e.target.amount.value),
-                  timesPerWeek: parseInt(e.target.timesPerWeek.value),
+                  waterInterval: parseInt(e.target.waterInterval.value),
                   picture: e.target.picture.value,
                   plantNeedWater: e.target.plantNeedWater.checked,
 								};
@@ -51,18 +51,12 @@ class AddPlant extends Component {
                 <option value="10">10</option>
               </select>
               <br />
-              <select name="timesPerWeek">
-                <option value="0">Times per month:</option>
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5">5</option>
-                <option value="6">6</option>
-                <option value="7">7</option>
-                <option value="8">8</option>
-                <option value="9">9</option>
-                <option value="10">10</option>
+              <select name="waterInterval">
+                <option value="0">How often?</option>
+                <option value="1">Everyday</option>
+                <option value="2">Every second day</option>
+                <option value="3">Every third day</option>
+                <option value="7">Once a week</option>
               </select>
               <br />
               <button >Add plant</button>

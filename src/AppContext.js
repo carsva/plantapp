@@ -40,7 +40,7 @@ export class AppProvider extends React.Component {
     plants.push({
       name: values.name,
       amount: values.amount,
-      timesPerWeek: values.timesPerWeek,
+      waterInterval: values.waterInterval,
       picture: values.picture,
       plantNeedWater: values.plantNeedWater,
     });
