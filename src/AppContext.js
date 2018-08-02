@@ -34,9 +34,19 @@ export class AppProvider extends React.Component {
   };
 
 
-    test = plant => {
-    console.log('p')
-    console.log(plant)
+    test = plantname => {
+    console.log(plantname)
+    let plants = this.state.plants;
+
+  let filteredPlants = plants.filter(plant => {
+    return plant.name !== plantname;
+  })
+
+  console.log(filteredPlants)
+  this.setState ({
+    plants: filteredPlants
+  })
+  localStorage.plants = JSON.stringify(filteredPlants);
 
 
 
