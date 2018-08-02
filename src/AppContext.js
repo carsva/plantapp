@@ -79,10 +79,11 @@ export class AppProvider extends React.Component {
   PlantNeedWater = () => {
     let plants = this.state.plants;
     let thirstyPlants = plants.map(plant => plant.plantNeedWater);
-    if (thirstyPlants.includes('true')) {
-      this.AnyPlantNeedWater('true');
+    console.log(thirstyPlants)
+    if (thirstyPlants.includes(true)) {
+      this.AnyPlantNeedWater(true);
     } else {
-      this.AnyPlantNeedWater('false');
+      this.AnyPlantNeedWater(false);
     }
   };
 
