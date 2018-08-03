@@ -12,8 +12,8 @@ class PlantPop extends Component {
       <div className="pop">
         <h2>{this.props.name} needs water</h2>
         <img src="./../plant.jpg" />
-        <h2>{this.props.amount} dl water</h2>
-        <button onClick={ThirstyToHappy}>Press when you watered</button>
+        <h3>{this.props.amount} dl water</h3>
+        <button className="button-style" onClick={ThirstyToHappy}>Press when you watered</button>
       </div>
     );
   }

@@ -14,13 +14,13 @@ class Start extends Component {
     return (
       <AppConsumer>
         {context => (
-          <div className="App">
-            <p>Welcome to the nr1 plant saver app</p>
-            <Link to="/home"><button>Get started</button></Link>
-            <div style={styles}>
+          <div className="center-objects">
+            <h1>Lets save some plants</h1>
+            <Link to="/home"><button className="button-style">Get started</button></Link>
+            {/* <div style={styles}>
               <h3>Data that lives in the context</h3>
               <pre>{JSON.stringify(context, null, 4)}</pre>
-            </div>
+            </div> */}
           </div>
         )}
       </AppConsumer>

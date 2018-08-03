@@ -13,8 +13,6 @@ class App extends Component {
     return (
       <AppProvider>
         <Router>
-          <div>
-            <div>
               <Switch>
                 <Route path="/" exact component={Start} />
                 <Route path="/home" exact component={Home} />
@@ -22,8 +20,6 @@ class App extends Component {
                 <Route path="/yourplants" exact component={yourPlants} />
                 <Route path="/plant/:id" component={Plant} />
               </Switch>
-            </div>
-          </div>
         </Router>
       </AppProvider>
     );

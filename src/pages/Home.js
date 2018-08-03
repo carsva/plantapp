@@ -4,8 +4,6 @@ import { Link } from 'react-router-dom';
 import PlantPop from './../components/PlantPop';
 
 class Home extends Component {
-
-
   renderClass(context) {
     if (!context.plants[0]) {
       return 'background-neutral';
@@ -42,47 +40,39 @@ class Home extends Component {
     localStorage.plants = JSON.stringify(myNewState.plants);
 
     something.state.PlantNeedWater();
-
-    
-    
   }
 
   render() {
-
     return (
       <AppConsumer>
         {context => (
           <div className={this.renderClass(context.state)}>
             {this.renderTitle(context.state)}
-            <div className="center">
-              {context.state.plants.map(plant => {
-                if (plant.plantNeedWater === true) {
-                  return (
-                    <PlantPop
-                      name={plant.name}
-                      key={plant.name}
-                      amount={plant.amount}
-                      ThirstyToHappy={context.state.ThirstyToHappy}
-                      blabla={this.clickme.bind(this, context)}
-                    />
-                  );
-                }
-              })}
-            </div>
-            <Link className="center" to="/yourplants">
-              Your plants
+            {context.state.plants.map(plant => {
+              if (plant.plantNeedWater === true) {
+                return (
+                  <PlantPop
+                    name={plant.name}
+                    key={plant.name}
+                    amount={plant.amount}
+                    ThirstyToHappy={context.state.ThirstyToHappy}
+                    blabla={this.clickme.bind(this, context)}
+                  />
+                );
+              }
+              
+            })}
+            <Link to="/yourplants">
+              <h3>Your plants</h3>
             </Link>
-            <br />
-            <br />
             <Link to="/addplant">
-              <button className="center">Add a plant</button>
+              <button className="button-style">Add a plant</button>
             </Link>
-            <button onClick={context.state.test}>Test</button>
-           
-            <div className="state space">
+            {/* <button onClick={context.state.test}>Test</button> */}
+            {/* <div className="state space">
               <h3>Data that lives in the context</h3>
               <pre>{JSON.stringify(context, null, 4)}</pre>
-            </div>
+            </div> */}
           </div>
         )}
       </AppConsumer>
