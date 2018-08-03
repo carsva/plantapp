@@ -27,10 +27,6 @@ export class AppProvider extends React.Component {
     
 
     let plants = this.state.plants;
-    
-    console.log(plants[0].wateringDate)
-    console.log(dateObjOutside)
-
 
     let UpdatedPlants = plants.map(plant => {
       if (dateObjOutside > plant.wateringDate) {
@@ -44,8 +40,6 @@ export class AppProvider extends React.Component {
       return plant;
     });
     // console.log(UpdatedPlants)
-    console.log(plants[0].wateringDate)
-
 
     this.setState({
       plants: UpdatedPlants,
@@ -81,12 +75,17 @@ export class AppProvider extends React.Component {
     let plants = this.state.plants;
 
     var dateObj = Date.now();
+        dateObj += values.waterInterval * 60000;
+        dateObj = new Date(dateObj);
+
+    dateObj = dateObj.toISOString();
+    
 
     // Add 3 days to the current date & time
     //   I'd suggest using the calculated static value instead of doing inline math
     //   I did it this way to simply show where the number came from
-    dateObj += values.waterInterval * 60000;
-    dateObj = dateObj.toISOString();
+    
+    
     // create a new Date object, using the adjusted time
     // dateObj = new Date(dateObj);
     // date
