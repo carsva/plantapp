@@ -16,6 +16,7 @@ export class AppProvider extends React.Component {
   };
 
   WateringDates = () => {
+    console.log('Watering date runs')
     var dateObjOutside = new Date();
     dateObjOutside = dateObjOutside.toISOString();
     
@@ -24,7 +25,6 @@ export class AppProvider extends React.Component {
 
     let UpdatedPlants = plants.map(plant => {
       if (dateObjOutside > plant.wateringDate) {
-        console.log('runs');
         plant.plantNeedWater = true;
         var dateObj = Date.now();
         dateObj += plant.waterInterval * 60000;
@@ -49,10 +49,11 @@ export class AppProvider extends React.Component {
 
     onDutyCheck = () => {
         console.log('check')
+        this.WateringDates();
         this.setState({
           ...this.state
         });
-        
+
     }
 
     test = () => {
