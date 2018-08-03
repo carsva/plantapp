@@ -15,12 +15,6 @@ export class AppProvider extends React.Component {
     anyPlantNeedWater: null,
   };
 
-
-
-
-
-
-
   WateringDates = () => {
     var dateObjOutside = new Date();
     dateObjOutside = dateObjOutside.toISOString();
@@ -53,8 +47,18 @@ export class AppProvider extends React.Component {
 
 
 
+    onDutyCheck = () => {
+        console.log('check')
+        this.setState({
+          ...this.state
+        });
+        
+    }
 
-
+    test = () => {
+    console.log('starting duty')
+    setInterval(this.onDutyCheck, 2000);
+    }
 
 
   deletePlant = plantname => {
@@ -89,7 +93,6 @@ export class AppProvider extends React.Component {
     // create a new Date object, using the adjusted time
     // dateObj = new Date(dateObj);
     // date
-    console.log(dateObj)
 
     plants.push({
       name: values.name,

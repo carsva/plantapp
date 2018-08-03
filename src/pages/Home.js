@@ -77,8 +77,8 @@ class Home extends Component {
             <Link to="/addplant">
               <button className="center">Add a plant</button>
             </Link>
-            <button onClick={context.state.WateringDates}>Test</button>
-            {/* <button onClick={this.timer}>Set Alarm</button> */}
+            <button onClick={context.state.test}>Test</button>
+           
             <div className="state space">
               <h3>Data that lives in the context</h3>
               <pre>{JSON.stringify(context, null, 4)}</pre>
