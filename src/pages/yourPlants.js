@@ -18,24 +18,24 @@ class yourPlants extends Component {
     return (
       <AppConsumer>
         {context => (
-          <div>
+          <div className="center-objects">
             <h1>Your plants</h1>
             {context.state.plants.map(plant => (
-              <div className="center">
-                <Link to={`/plant/${plant.name}`}>{plant.name}</Link>
-                <button onClick={this.clickme.bind(context, plant.name)}>
+              <div className="yourplants">
+                <Link to={`/plant/${plant.name}`}><h3>{plant.name}</h3></Link>
+                <button className="button-style" onClick={this.clickme.bind(context, plant.name)}>
                   X
                 </button>
               </div>
             ))}
 
             <Link to="/home">
-              <button className="center topspace">Back</button>
+              <button className="button-secondary-style">Back</button>
             </Link>
-            <div className="state">
+            {/* <div className="state">
               <h3>Data that lives in the context</h3>
               <pre>{JSON.stringify(context, null, 4)}</pre>
-            </div>
+            </div> */}
           </div>
         )}
       </AppConsumer>

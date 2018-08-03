@@ -17,7 +17,7 @@
   padding: 10px;
 }
 .pop img {
-  width: 100%;
+  width: 80%;
   height: auto;
 }
 
@@ -78,6 +78,7 @@ h1 {
     font-size: 3em;
     -webkit-margin-before: 0em;
     -webkit-margin-after: 0em;
+    margin-bottom:0.5em;
   }
 
   .center-objects {
@@ -89,8 +90,21 @@ h1 {
     color: white;
     font-size: 1.5em;
     border: none;
+    padding:0.4em;
     margin-top: 1em;
     border-radius: 0.5em;
+    margin-bottom: 1.7em;
+  }
+
+  .button-secondary-style {
+    background: rgb(97, 97, 97);
+    color: white;
+    font-size: 1.5em;
+    border: none;
+    padding:0.4em;
+    border-radius: 0.5em;
+    margin-bottom: 2em;
+    margin-top: -5em;
   }
 
   .topspace {
@@ -101,6 +115,10 @@ h1 {
     float: left;
   }
 
+  ::placeholder {
+    color: rgb(0, 0, 0);
+  }
+
   input,
   select {
     margin-top: 0.2em;
@@ -109,14 +127,38 @@ h1 {
   }
 
   .pop {
-    background-color: rgb(41, 41, 41);
+    background-color: rgb(152, 199, 160);
     padding: 1em;
-    color: white;
+    color: rgb(0, 0, 0);
     margin-top: 2em;
     border-radius: 0.5em;
   }
 
   .pop h3, h2 {
     font-family: 'Modern Antiqua', cursive;
+    margin-top: 1em;
+  }
+
+  h3 {
+    margin-top: 1em;
+  }
+
+  .pop button {
+    margin-top: 1em;
+    width: 80%;
+    font-size: 1.5em;
+    margin-bottom: 1em;
+  }
+
+  .yourplants {
+    height: auto;
+
+  }
+
+  .yourplants h3 {
+    font-size: 2em;
+  }
+  .yourplants button {
+    margin-top: 0.1em;
   }
 }

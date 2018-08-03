@@ -56,13 +56,13 @@ class AddPlant extends Component {
                 <button className="button-style">Add plant</button>
               </form>
               <Link to="/home">
-                <button className="button-style">Back</button>
+                <button className="button-secondary-style">Back</button>
               </Link>
 
-              <div style={styles}>
+              {/* <div style={styles}>
                 <h3>Data that lives in the context</h3>
                 <pre>{JSON.stringify(context, null, 4)}</pre>
-              </div>
+              </div> */}
             </div>
           </div>
         )}
