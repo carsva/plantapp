@@ -16,7 +16,6 @@ export class AppProvider extends React.Component {
   };
 
   WateringDates = () => {
-    console.log('Watering date runs')
     var dateObjOutside = new Date();
     dateObjOutside = dateObjOutside.toISOString();
     
@@ -50,15 +49,11 @@ export class AppProvider extends React.Component {
     onDutyCheck = () => {
         console.log('check')
         this.WateringDates();
-        this.setState({
-          ...this.state
-        });
-
     }
 
-    test = () => {
+    onDuty = () => {
     console.log('starting duty')
-    setInterval(this.onDutyCheck, 2000);
+    setInterval(this.onDutyCheck, 60000);
     }
 
 
@@ -129,6 +124,7 @@ export class AppProvider extends React.Component {
   componentWillMount() {
     this.PlantNeedWater();
     this.WateringDates();
+    this.onDuty();
   }
 
   render() {

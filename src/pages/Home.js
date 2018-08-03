@@ -20,7 +20,7 @@ class Home extends Component {
     if (!context.plants[0]) {
       return <h1>You have no plants</h1>;
     } else if (context.anyPlantNeedWater === true) {
-      return <h1>Your plants are not feeling well</h1>;
+      return <h1>Time to water some plants</h1>;
     } else if (context.anyPlantNeedWater === false) {
       return <h1>Your plants are feeling well</h1>;
     }
