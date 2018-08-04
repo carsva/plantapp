@@ -75,7 +75,7 @@ export class AppProvider extends React.Component {
     let plants = this.state.plants;
 
     var dateObj = Date.now();
-        dateObj += values.waterInterval * 60000;
+        dateObj += values.waterInterval * 86400000;
         dateObj = new Date(dateObj);
 
     dateObj = dateObj.toISOString();
@@ -94,7 +94,6 @@ export class AppProvider extends React.Component {
       name: values.name,
       amount: values.amount,
       waterInterval: values.waterInterval,
-      timeToWatering: values.waterInterval * 60000,
       wateringDate: dateObj,
       picture: values.picture,
       plantNeedWater: values.plantNeedWater,
