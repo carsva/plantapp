@@ -29,6 +29,7 @@ class AddPlant extends Component {
                     picture: e.target.picture.value,
                   };
                   context.state.newPlant(values);
+                  this.props.history.push('/home');
                 }}
               >
                 <input type="text" name="name" placeholder="Name" />
