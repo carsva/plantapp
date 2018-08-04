@@ -1,13 +1,13 @@
 import React from 'react';
 
-export const AppContext = React.createContext('plant');
-
 let plants = [];
 
 if (localStorage.plants) {
   let localPlants = JSON.parse(localStorage.plants);
   plants = localPlants;
 }
+
+export const AppContext = React.createContext('plant');
 
 export class AppProvider extends React.Component {
   state = {
