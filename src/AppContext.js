@@ -26,7 +26,7 @@ export class AppProvider extends React.Component {
       if (dateObjOutside > plant.wateringDate) {
         plant.plantNeedWater = true;
         var dateObj = Date.now();
-        dateObj += plant.waterInterval * 60000;
+        dateObj += plant.waterInterval * 86400000;
         dateObj = new Date(dateObj);
         plant.wateringDate = dateObj;
       }
