@@ -14,6 +14,11 @@
 *******************************/
 
 @import url('https://fonts.googleapis.com/css?family=Arial:400,700,400italic,700italic&subset=latin');
+.test {
+  background-color: #9BAC00;
+  width: 200px;
+  height: 200px;
+}
 html,
 body {
   height: 100%;

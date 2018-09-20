@@ -15,6 +15,7 @@ class Start extends Component {
       <AppConsumer>
         {context => (
           <div className="">
+          <div className="test"></div>
             <h1>Lets save some plants</h1>
             <Link to="/home"><button className="ui button">Get started</button></Link>
             {/* <div style={styles}>

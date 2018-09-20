@@ -1,6 +1,8 @@
 /*******************************
      User Global Variables
 *******************************/
+
+@plantygreen: #9BAC00;
 @emSize: 19px;
 @fontSize: 19px;
 @fontName: 'Arial';
