@@ -14,9 +14,9 @@ class Start extends Component {
     return (
       <AppConsumer>
         {context => (
-          <div className="center-objects">
+          <div className="">
             <h1>Lets save some plants</h1>
-            <Link to="/home"><button className="button-style">Get started</button></Link>
+            <Link to="/home"><button className="ui button">Get started</button></Link>
             {/* <div style={styles}>
               <h3>Data that lives in the context</h3>
               <pre>{JSON.stringify(context, null, 4)}</pre>
