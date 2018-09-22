@@ -1,0 +1,19 @@
+@import url('https://fonts.googleapis.com/css?family=Sriracha');
+@import url('https://fonts.googleapis.com/css?family=Fira+Sans');
+
+#logo {
+  width: 12em;
+  margin-top: 5em;
+  margin-bottom: 1.5em;
+}
+
+#start_screen_button {
+  font-family: 'Sriracha', regular;
+  color: white;
+  margin-bottom: 0.2em;
+}
+
+.start_screen_text {
+  font-family: 'Fira Sans', sans-serif;
+  font-size: 0.8em;
+}

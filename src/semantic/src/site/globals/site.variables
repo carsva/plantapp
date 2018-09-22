@@ -2,7 +2,10 @@
      User Global Variables
 *******************************/
 
-@plantygreen: #9BAC00;
+@plantylight: #9BAC00;
+@plantydark: #276640;
+@plantyorange: #ED9A0B;
+@plantyblue: #1CC2EB;
 @emSize: 19px;
 @fontSize: 19px;
 @fontName: 'Arial';
