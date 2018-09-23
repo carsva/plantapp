@@ -6,6 +6,9 @@
 @plantydark: #276640;
 @plantyorange: #ED9A0B;
 @plantyblue: #1CC2EB;
+@plantypink: #D27B7B;
+
+
 @emSize: 19px;
 @fontSize: 19px;
 @fontName: 'Arial';

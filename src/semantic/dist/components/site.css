@@ -17,8 +17,14 @@
 #logo {
   fill: #276640;
 }
+#small_logo {
+  fill: #276640;
+}
 #start_screen_button {
   background-color: #ED9A0B;
+}
+#standard_button {
+  background-color: #D27B7B;
 }
 html,
 body {
