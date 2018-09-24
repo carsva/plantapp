@@ -19,7 +19,7 @@ class Start extends Component {
 
             
             <Link to="/home"><button id="start_screen_button" className="ui huge button">Get started</button></Link>
-            <p class="start_screen_text">Lets save some plants</p>
+            <p className="start_screen_text">Lets save some plants</p>
             {/* <div style={styles}>
               <h3>Data that lives in the context</h3>
               <pre>{JSON.stringify(context, null, 4)}</pre>

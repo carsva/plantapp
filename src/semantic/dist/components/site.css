@@ -26,6 +26,9 @@
 #standard_button {
   background-color: #D27B7B;
 }
+#standard_button_orange {
+  background-color: #ED9A0B;
+}
 html,
 body {
   height: 100%;

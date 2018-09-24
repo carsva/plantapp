@@ -19,6 +19,16 @@
   margin-top: 0.5em;
   }
 
+  .wider_button {
+    width: 100%;
+  }
+
+  #standard_button_orange {
+  color:white;
+  font-family: 'Sriracha', regular;
+  margin-top: 0.5em;
+  }
+
 #small_logo {
 margin-top: 2.5em;  
 width: 4em;
@@ -30,6 +40,7 @@ width: 4em;
   align-content: center;
   display: flex;
   align-items: center;
+  align-content: center;
   flex-direction: column;
 }
 
@@ -37,8 +48,13 @@ width: 4em;
   line-height: 1.1em;
   color: white;
   font-family: 'Sriracha', regular;
-  width: 5em;
+  width: 6em;
   font-size: 2.5em;
+  text-align: center;
+}
+
+.plant_form {
+  margin-top: 2em;
 }
 
 
