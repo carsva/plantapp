@@ -115,28 +115,28 @@
 ---------------*/
 
 .ui.mini.rail {
-  font-size: 0.78571429rem;
+  font-size: 0.78947368rem;
 }
 .ui.tiny.rail {
-  font-size: 0.85714286rem;
+  font-size: 0.84210526rem;
 }
 .ui.small.rail {
-  font-size: 0.92857143rem;
+  font-size: 0.94736842rem;
 }
 .ui.rail {
   font-size: 1rem;
 }
 .ui.large.rail {
-  font-size: 1.14285714rem;
+  font-size: 1.15789474rem;
 }
 .ui.big.rail {
-  font-size: 1.28571429rem;
+  font-size: 1.26315789rem;
 }
 .ui.huge.rail {
-  font-size: 1.42857143rem;
+  font-size: 1.42105263rem;
 }
 .ui.massive.rail {
-  font-size: 1.71428571rem;
+  font-size: 1.73684211rem;
 }
 
 

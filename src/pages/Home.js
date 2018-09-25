@@ -8,9 +8,9 @@ class Home extends Component {
     if (!context.plants[0]) {
       return 'title_container';
     } else if (context.anyPlantNeedWater === true) {
-      return 'background-notwatered';
+      return 'title_container';
     } else if (context.anyPlantNeedWater === false) {
-      return 'background-watered';
+      return 'title_container';
     }
   }
 
@@ -18,9 +18,9 @@ class Home extends Component {
     if (!context.plants[0]) {
       return <h1 className="title">Add your first plant</h1>;
     } else if (context.anyPlantNeedWater === true) {
-      return <h1>Time to water some plants</h1>;
+      return <h1 className="title">These plants need water</h1>;
     } else if (context.anyPlantNeedWater === false) {
-      return <h1>Your plants are feeling well</h1>;
+      return <h1 className="title">Your plants are feeling well</h1>;
     }
   }
 
