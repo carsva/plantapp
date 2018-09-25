@@ -14,25 +14,24 @@
 }
 
 #standard_button {
-  color:white;
+  color: white;
   font-family: 'Sriracha', regular;
   margin-top: 0.5em;
-  }
+}
 
-  .wider_button {
-    width: 100%;
-  }
+.wider_button {
+  width: 100%;
+}
 
-  #standard_button_orange {
-  color:white;
+#standard_button_orange {
+  color: white;
   font-family: 'Sriracha', regular;
   margin-top: 0.5em;
-  }
+}
 
 #small_logo {
-margin-top: 2.5em;  
-width: 4em;
-
+  margin-top: 2.5em;
+  width: 4em;
 }
 
 .title_container {
@@ -57,4 +56,7 @@ width: 4em;
   margin-top: 2em;
 }
 
-
+.purple {
+  background-color: purple;
+  text-align: center;
+}
