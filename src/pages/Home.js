@@ -24,6 +24,19 @@ class Home extends Component {
     }
   }
 
+  renderYourPlants(context) {
+    if (context.plants[0]) {
+      return (
+      <Link to="/yourplants">
+      <h3>Your plants</h3>
+    </Link>)
+    } else {
+      return null
+    }
+    
+
+  }
+
   clickme(something, actuallyTheContext) {
     let myNewSomething = something.state.plants.map(element => {
       if (element.name === actuallyTheContext) {
@@ -98,9 +111,7 @@ class Home extends Component {
                   );
                 }
               })}
-              {/* <Link to="/yourplants">
-                <h3>Your plants</h3>
-              </Link> */}
+              {this.renderYourPlants(context.state)}
               <Link to="/addplant">
                 <button id="standard_button" className="ui button big">
                   Add a plant

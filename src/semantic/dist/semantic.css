@@ -562,6 +562,10 @@ template {
   fill: #276640;
 }
 
+#drop {
+  fill: #1CC2EB;
+}
+
 #start_screen_button {
   background-color: #ED9A0B;
 }
