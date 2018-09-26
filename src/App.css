@@ -71,8 +71,8 @@
 
 
 .pop_container {
-  width: 20em;
-  height: 20em;
+  width: 15em;
+  height: 18em;
   margin-bottom: 7em;
   background-color:white;
   border-radius: 0.5em;
@@ -107,13 +107,13 @@
 }
 
 .pop > img {
-  width: 15em;
+  width: 13em;
   /* width: 15em; */
 }
 
 #drop {
   position: relative;
-  top: -6em;
+  top: -8em;
   /* position: relative; */
   width: 6.5em;
   /* top: 30px;
@@ -124,7 +124,8 @@
   position: relative;
   font-family: 'Sriracha', regular;
   color: white;
-  top: 7em;
+  top: 5em;
+  font-size: 1.5em;
   /* font-family: 'Sriracha', regular;
   position: relative;
   top: 15px;
@@ -139,7 +140,7 @@
 }
 
 #tap_the_drop {
-  margin-top: -6em;
+  margin-top: -8em;
   font-family: 'Sriracha', regular;
   color: white;
 }

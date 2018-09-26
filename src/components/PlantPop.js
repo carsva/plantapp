@@ -13,8 +13,8 @@ class PlantPop extends Component {
         <h2>{this.props.name}</h2>
         <img src="./../plant.jpg" />
         <div id="drop" onClick={ThirstyToHappy}>
-          <div id="drop_text">
-            <h3>{this.props.amount} dl</h3>
+          <div>
+            <h3 id="drop_text">{this.props.amount} dl</h3>
           </div>
           
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 111.99 162.19">
@@ -33,7 +33,7 @@ class PlantPop extends Component {
           
      
       </div>
-      <div id="tap_the_drop">Tap the drop when you have watered</div>
+      <div id="tap_the_drop">Tap the drop when watered</div>
       </div>
       
     );
