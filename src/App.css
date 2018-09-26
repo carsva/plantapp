@@ -27,6 +27,7 @@
   color: white;
   font-family: 'Sriracha', regular;
   margin-top: 0.5em;
+  margin-bottom: 1em;
 }
 
 #small_logo {
@@ -56,9 +57,18 @@
   margin-top: 2em;
 }
 
-.purple {
-  background-color: purple;
+.white {
+  fill: rgb(255, 255, 255);
 }
+
+#plant_svg_fill {
+
+}
+
+#plant_svg {
+  width: 10em;
+}
+
 
 .pop_container {
   width: 20em;
@@ -133,3 +143,4 @@
   font-family: 'Sriracha', regular;
   color: white;
 }
+

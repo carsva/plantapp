@@ -554,6 +554,10 @@ template {
              Page
 *******************************/
 
+#plant_svg_fill {
+  fill: #276640;
+}
+
 #logo {
   fill: #276640;
 }

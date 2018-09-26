@@ -20,31 +20,66 @@ class Home extends Component {
     } else if (context.anyPlantNeedWater === true) {
       return <h1 className="title">These plants need water</h1>;
     } else if (context.anyPlantNeedWater === false) {
-      return <h1 className="title">Your plants are feeling well</h1>;
+      return (
+        <div>
+          <h1 className="title">Your plants feel happy</h1>
+          <svg
+            id="plant_svg"
+            data-name="Lager 1"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 452.3 687.94"
+          >
+            <path
+              id="plant_svg_fill"
+              d="M349,187.92c20.79,5.35,48.7,12.81,85.82-8.07,39.14-22,56.22-65.08,61.9-85.56a6.23,6.23,0,0,0-6.5-8.06h0a6.34,6.34,0,0,0-2.86,1c-6.88,4.31-26.6,7.56-46,9.11s-38.63,1.84-49.67,4.16c-16.86,3.53-26.67,18.69-33.56,34.33-6.5,14.77-10.88,31-15.08,42.13-14.23,7.79-29.66,23.63-42.91,43.18a180.21,180.21,0,0,0-19.51,37.71c-3.5-13.73-8.53-26.75-15.86-37.45-11-16-27.74-26.87-50.46-27.83-15.8-8.69-31.15-20.36-55.66-22.37A107.08,107.08,0,0,0,130,172.05c-43.38,8.16-59.64,34.39-72.3,51a6.24,6.24,0,0,0,5.46,9.88c13.43-1.16,36,6.13,78.55,20.29,22.16,7.36,39.77-1.73,51.23-14.31,10.37-11.38,17.16-25.3,22.63-33.81,18.09,1.2,30.08,9.32,39,22.37,9.49,13.85,15,33.65,17.95,54.61.31,2.24.52,4.51.78,6.77a6,6,0,0,0,0,1c0,.18.24.34.26.52v.26a455.34,455.34,0,0,1,2.08,53.83c-.22,17.21-.83,31.63-.52,41.62H87.87A43.08,43.08,0,0,0,68.1,467.5l50.46,301.44a6.24,6.24,0,0,0,6,5.2h297a6.25,6.25,0,0,0,6.24-5.46L471.75,467a43,43,0,0,0-20.54-80.88H287.62c-.32-8.67.29-23.35.52-41.35a471.72,471.72,0,0,0-2.34-56.18c1.58-19.71,11.79-42.33,24.71-61.38C322.92,208.88,338,194,349,187.92Z"
+              transform="translate(-44.7 -86.2)"
+            />
+            <path
+              class="white"
+              d="M296.06,488.54q6.84,4.9,13.79,3.06a14.1,14.1,0,0,0,8.93-7.06,15.83,15.83,0,0,0,1.31-12.24,22,22,0,0,0-9.37-12.64q-7.35-5-15-3-5.17,1.38-7.75,7a17,17,0,0,0-.92,11.9A22.71,22.71,0,0,0,296.06,488.54Z"
+              transform="translate(-44.7 -86.2)"
+            />
+            <path
+              class="white"
+              d="M214.7,489.78q6.83,4.91,13.79,3.06a14.13,14.13,0,0,0,8.93-7.06,15.86,15.86,0,0,0,1.31-12.25,22,22,0,0,0-9.38-12.64q-7.33-5-15-3c-3.44.92-6,3.24-7.75,7a17.08,17.08,0,0,0-.91,11.89A22.75,22.75,0,0,0,214.7,489.78Z"
+              transform="translate(-44.7 -86.2)"
+            />
+            <path
+              class="white"
+              d="M261.14,562.71q-29-4.77-48.14-17.94a110.08,110.08,0,0,0-14.3-12.65q-6.06-4.27-10.1-3.2-9.42,2.52-6.26,14.4a28.68,28.68,0,0,0,4.71,9.56q37.56,44.54,113.05,42A146.05,146.05,0,0,0,329,589.81q22.43-6,38.22-18t22.37-27a15.22,15.22,0,0,0,1.14-10.16q-1.44-5.38-7.3-9.35t-10.34-2.77Q368.8,524.43,365,530a73.47,73.47,0,0,1-17.36,17.84q-9.69,6.9-27.42,11.62A139.56,139.56,0,0,1,261.14,562.71Z"
+              transform="translate(-44.7 -86.2)"
+            />
+          </svg>
+        </div>
+      );
     }
   }
 
   renderYourPlants(context) {
     if (!context.plants[0] || context.anyPlantNeedWater === true) {
-      return (null)
+      return null;
     } else {
       return (
-      <Link to="/yourplants">
-      <h3>Your plants</h3>
-      </Link>)
+        <Link to="/yourplants">
+          <button id="standard_button_orange" className="ui button big">
+            Your plants
+          </button>
+        </Link>
+      );
     }
   }
 
   renderAddPlant(context) {
     if (context.anyPlantNeedWater === true) {
-      return (null)
+      return null;
     } else {
       return (
         <Link to="/addplant">
-        <button id="standard_button" className="ui button big">
-          Add a plant
-        </button>
-      </Link>)
+          <button id="standard_button" className="ui button big">
+            Add a plant
+          </button>
+        </Link>
+      );
     }
   }
 
@@ -122,8 +157,8 @@ class Home extends Component {
                   );
                 }
               })}
-              {this.renderYourPlants(context.state)}
               {this.renderAddPlant(context.state)}
+              {this.renderYourPlants(context.state)}
               {/* <button onClick={context.state.test}>Test</button> */}
               {/* <div className="state space">
               <h3>Data that lives in the context</h3>
