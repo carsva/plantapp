@@ -46,11 +46,13 @@
 
 .title {
   line-height: 1.1em;
-  color: white;
+  color: #ffffff;
   font-family: 'Sriracha', regular;
   width: 6em;
   font-size: 2.5em;
   text-align: center;
+  margin: 0 auto;
+  margin-bottom: 0.5em;
 }
 
 .plant_form {
@@ -62,19 +64,17 @@
 }
 
 #plant_svg_fill {
-
 }
 
 #plant_svg {
-  width: 10em;
+  width: 7em;
 }
-
 
 .pop_container {
   width: 15em;
   height: 18em;
   margin-bottom: 7em;
-  background-color:white;
+  background-color: white;
   border-radius: 0.5em;
 }
 
@@ -85,7 +85,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  
+
   /* background-color: white;
   display: flex;
   justify-content: center;
@@ -145,3 +145,23 @@
   color: white;
 }
 
+.your_plants_list {
+  margin-top: 1em;
+  margin-bottom: 2em;
+  font-family: 'Sriracha', regular;
+}
+
+.your_plant {
+  margin-top: 1em;
+  display: flex;
+  justify-content: center;
+}
+
+#trash {
+  color: white;
+  padding-left: 0.5em;
+}
+
+h3 {
+  /* font-family: 'Fira Sans', sans-serif !important; */
+}

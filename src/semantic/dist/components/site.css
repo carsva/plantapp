@@ -123,7 +123,8 @@ p:last-child {
 --------------------*/
 
 a {
-  color: #4183C4;
+  color: #276640;
+  font-family: 'Sriracha', regular;
   text-decoration: none;
 }
 a:hover {

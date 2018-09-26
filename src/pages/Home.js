@@ -22,7 +22,7 @@ class Home extends Component {
     } else if (context.anyPlantNeedWater === false) {
       return (
         <div>
-          <h1 className="title">Your plants feel happy</h1>
+          <div className="title">Your plants feel happy</div>
           <svg
             id="plant_svg"
             data-name="Lager 1"
