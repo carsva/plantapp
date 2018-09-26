@@ -25,16 +25,27 @@ class Home extends Component {
   }
 
   renderYourPlants(context) {
-    if (context.plants[0]) {
+    if (!context.plants[0] || context.anyPlantNeedWater === true) {
+      return (null)
+    } else {
       return (
       <Link to="/yourplants">
       <h3>Your plants</h3>
-    </Link>)
-    } else {
-      return null
+      </Link>)
     }
-    
+  }
 
+  renderAddPlant(context) {
+    if (context.anyPlantNeedWater === true) {
+      return (null)
+    } else {
+      return (
+        <Link to="/addplant">
+        <button id="standard_button" className="ui button big">
+          Add a plant
+        </button>
+      </Link>)
+    }
   }
 
   clickme(something, actuallyTheContext) {
@@ -112,11 +123,7 @@ class Home extends Component {
                 }
               })}
               {this.renderYourPlants(context.state)}
-              <Link to="/addplant">
-                <button id="standard_button" className="ui button big">
-                  Add a plant
-                </button>
-              </Link>
+              {this.renderAddPlant(context.state)}
               {/* <button onClick={context.state.test}>Test</button> */}
               {/* <div className="state space">
               <h3>Data that lives in the context</h3>
