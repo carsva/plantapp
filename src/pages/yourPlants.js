@@ -62,7 +62,6 @@ class yourPlants extends Component {
             {context.state.plants.map(plant => (
                 <div className="your_plant">
                 <Link to={`/plant/${plant.name}`}><h3>{plant.name}</h3></Link>
-                <i id="trash" className="trash icon" onClick={this.clickme.bind(context, plant.name)}></i>
               </div>
             ))}
             </div>

@@ -1,8 +1,14 @@
 import React, { Component } from 'react';
 import { AppConsumer } from '../AppContext';
 import { Link } from 'react-router-dom';
+import { Route, Redirect } from 'react-router'
 
 class Plant extends Component {
+
+  clickme(plantName) {
+    this.state.deletePlant(plantName);
+  }
+  
   render() {
     let paramId = this.props.match.params.id;
 
@@ -62,6 +68,9 @@ class Plant extends Component {
             })}
             <Link to="/home">
               <button id="standard_button_orange" className="ui button big">Back</button>
+            </Link>
+            <Link to="/home">
+            <i id="trash" className="trash icon" onClick={this.clickme.bind(context, paramId)}></i>
             </Link>
           </div>
         )}
