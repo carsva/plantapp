@@ -33,22 +33,20 @@ class AddPlant extends Component {
                     picture: e.target.picture.value,
                   };
 
-                  if(values.name === "" || values.amount === "err" || values.waterInterval === 0) {
+                  if(values.name === "" || values.amount === 22 || values.waterInterval === 22) {
                     alert('Please fill in all the fields')
 
                   } else {
                     context.state.newPlant(values);
                     this.props.history.push('/home');
                   }
-                
-      
                 }}
               >
                 <div className="ui form plant_form">
                 <div className="field"><input type="text" name="name" placeholder="Name" /></div>
                 <div className="field"><input type="hidden" name="picture" value="./../plant.jpg"/></div>
                 <div className="field"><select name="amount">
-                  <option value="err">Amount of water (dl):</option>
+                  <option value="22">Amount of water (dl):</option>
                   <option value="1">1</option>
                   <option value="2">2</option>
                   <option value="3">3</option>
@@ -62,7 +60,7 @@ class AddPlant extends Component {
                   
                 </select></div>
                 <select name="waterInterval">
-                  <option value="0">How often?</option>
+                  <option value="22">How often?</option>
                   <option value="1">Everyday</option>
                   <option value="2">Every second day</option>
                   <option value="3">Every third day</option>
