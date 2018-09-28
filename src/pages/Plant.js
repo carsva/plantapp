@@ -1,14 +1,13 @@
 import React, { Component } from 'react';
 import { AppConsumer } from '../AppContext';
 import { Link } from 'react-router-dom';
-import { Route, Redirect } from 'react-router'
+import { Route, Redirect } from 'react-router';
 
 class Plant extends Component {
-
   clickme(plantName) {
     this.state.deletePlant(plantName);
   }
-  
+
   render() {
     let paramId = this.props.match.params.id;
 
@@ -16,7 +15,7 @@ class Plant extends Component {
       <AppConsumer>
         {context => (
           <div className="ui center aligned container">
-          <svg
+            <svg
               id="small_logo"
               data-name="Lager 1"
               xmlns="http://www.w3.org/2000/svg"
@@ -51,27 +50,39 @@ class Plant extends Component {
                 transform="translate(-600.04 -258.1)"
               />
             </svg>
-          <div className="title_container">
-            <h1 className="title">{paramId}</h1>
+            <div className="title_container">
+              <h1 className="title">{paramId}</h1>
             </div>
-            
+
             {context.state.plants.map(plant => {
               if (plant.name === paramId) {
                 return (
-                  <div >
-                    <img className="image" src={plant.picture}/>
-                    <div className="description">{plant.name}: {plant.amount} dl water,{' '}
-                    every {plant.waterInterval} day</div>
+                  <div>
+                    <img className="image" src={plant.picture} />
+                    <div className="description">
+                      {plant.name}: {plant.amount} dl water, every{' '}
+                      {plant.waterInterval} day
+                    </div>
                   </div>
                 );
               }
             })}
-            <Link to="/home">
-              <button id="standard_button_orange" className="ui button big">Back</button>
-            </Link>
-            <Link to="/home">
-            <i id="trash" className="trash icon" onClick={this.clickme.bind(context, paramId)}></i>
-            </Link>
+            <div>
+              <Link to="/home">
+                <button id="standard_button_orange" className="ui button big">
+                  Back
+                </button>
+              </Link>
+            </div>
+            <div id="trash_container">
+              <Link to="/home">
+                <i
+                  id="trash"
+                  className="trash icon large"
+                  onClick={this.clickme.bind(context, paramId)}
+                />
+              </Link>
+            </div>
           </div>
         )}
       </AppConsumer>
