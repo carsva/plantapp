@@ -54,7 +54,7 @@ class Plant extends Component {
                 return (
                   <div >
                     <img className="image" src={plant.picture}/>
-                    <div className="description">Give {plant.name} {plant.amount} dl water,{' '}
+                    <div className="description">{plant.name}: {plant.amount} dl water,{' '}
                     every {plant.waterInterval} day</div>
                   </div>
                 );
