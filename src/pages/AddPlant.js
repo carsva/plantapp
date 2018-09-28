@@ -32,15 +32,23 @@ class AddPlant extends Component {
                     waterInterval: parseInt(e.target.waterInterval.value),
                     picture: e.target.picture.value,
                   };
-                  context.state.newPlant(values);
-                  this.props.history.push('/home');
+
+                  if(values.name === "" || values.amount === "err" || values.waterInterval === 0) {
+                    alert('Please fill in all the fields')
+
+                  } else {
+                    context.state.newPlant(values);
+                    this.props.history.push('/home');
+                  }
+                
+      
                 }}
               >
                 <div className="ui form plant_form">
                 <div className="field"><input type="text" name="name" placeholder="Name" /></div>
                 <div className="field"><input type="hidden" name="picture" value="./../plant.jpg"/></div>
                 <div className="field"><select name="amount">
-                  <option value="0">Amount of water (dl):</option>
+                  <option value="err">Amount of water (dl):</option>
                   <option value="1">1</option>
                   <option value="2">2</option>
                   <option value="3">3</option>
@@ -51,6 +59,7 @@ class AddPlant extends Component {
                   <option value="8">8</option>
                   <option value="9">9</option>
                   <option value="10">10</option>
+                  
                 </select></div>
                 <select name="waterInterval">
                   <option value="0">How often?</option>
@@ -58,6 +67,7 @@ class AddPlant extends Component {
                   <option value="2">Every second day</option>
                   <option value="3">Every third day</option>
                   <option value="7">Once a week</option>
+                  <option value="0">test</option>
                 </select>
                 <button id="standard_button" className="ui button big wider_button">Add plant</button>
                 </div>
