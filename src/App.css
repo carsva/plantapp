@@ -63,9 +63,6 @@
   fill: rgb(255, 255, 255);
 }
 
-#plant_svg_fill {
-}
-
 #plant_svg {
   width: 7em;
 }
@@ -162,6 +159,17 @@
   padding-left: 0.5em;
 }
 
-h3 {
-  /* font-family: 'Fira Sans', sans-serif !important; */
+.image {
+margin-top: 1em;
+border-radius: 0.5em;
+margin-bottom: 0.7em;
 }
+
+.description {
+  color:white;
+  font-family: 'Sriracha', regular;
+  width: 14em;
+  text-align: center;
+  margin: 0 auto;
+}
+
