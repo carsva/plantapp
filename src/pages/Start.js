@@ -18,6 +18,7 @@ class Start extends Component {
 
     function handleFileUploadChange(e) {
       selectedFile = e.target.files[0];
+      console.log(e.target.files[0]);
     }
 
     function handleFileUploadSubmit() {
@@ -40,11 +41,7 @@ class Start extends Component {
       );
     }
 
-    function showImage() {
-
-    }
-
-   
+    function showImage() {}
 
     return (
       <AppConsumer>
@@ -96,7 +93,7 @@ class Start extends Component {
               </Link>
               <p className="start_screen_text">Lets save some plants</p>
             </div>
-            <div id="filesubmit">
+            {/* <div id="filesubmit">
               <input
                 onChange={handleFileUploadChange}
                 type="file"
@@ -107,7 +104,7 @@ class Start extends Component {
                 SUBMIT
               </button>
               <button onClick={showImage}>Show</button>
-            </div>
+            </div> */}
           </div>
         )}
       </AppConsumer>
