@@ -3,6 +3,7 @@ import { AppConsumer } from '../AppContext';
 import { Link } from 'react-router-dom';
 import PlantPop from './../components/PlantPop';
 
+
 class Home extends Component {
   renderClass(context) {
     if (!context.plants[0]) {
