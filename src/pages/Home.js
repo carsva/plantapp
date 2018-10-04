@@ -150,6 +150,7 @@ class Home extends Component {
                     <PlantPop
                       name={plant.name}
                       key={plant.name}
+                      picture={plant.picture}
                       amount={plant.amount}
                       ThirstyToHappy={context.state.ThirstyToHappy}
                       blabla={this.clickme.bind(this, context)}

@@ -11,7 +11,7 @@ class PlantPop extends Component {
       <div className="pop_container">
       <div className="pop">
         <h2>{this.props.name}</h2>
-        <img src="./../plant.jpg" />
+        <img src={this.props.picture}/>
         <div id="drop" onClick={ThirstyToHappy}>
           <div>
             <h3 id="drop_text">{this.props.amount} dl</h3>

@@ -11,7 +11,7 @@ class AddPlant extends Component {
     super(props);
     this.state = {
       error: false,
-      image: "",
+      picture: "",
     };
   }
 
@@ -32,7 +32,7 @@ class AddPlant extends Component {
       file.promise().done((fileInfo) => {
         console.log("From inside promise " + fileInfo.cdnUrl);
         this.setState({
-          image: fileInfo.cdnUrl,
+          picture: fileInfo.cdnUrl,
         })
         console.log(this.state)
 
@@ -63,7 +63,7 @@ class AddPlant extends Component {
                     name: e.target.name.value,
                     amount: parseInt(e.target.amount.value),
                     waterInterval: parseInt(e.target.waterInterval.value),
-                    picture: this.state.image,
+                    picture: this.state.picture,
                   };
 
                   if(values.name === "" || values.amount === 22 || values.waterInterval === 22) {
