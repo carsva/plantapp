@@ -60,7 +60,7 @@ class Plant extends Component {
                   <div>
                     <img className="image" src={plant.picture} />
                     <div className="description">
-                      {plant.name}: {plant.amount} dl water, every{' '}
+                      {plant.amount} dl water, every{' '}
                       {plant.waterInterval} day
                     </div>
                   </div>
@@ -76,11 +76,12 @@ class Plant extends Component {
             </div>
             <div id="trash_container">
               <Link to="/home">
-                <i
+              <p onClick={this.clickme.bind(context, paramId)} id="delete">Delete plant</p>
+                {/* <i
                   id="trash"
                   className="trash icon large"
                   onClick={this.clickme.bind(context, paramId)}
-                />
+                /> */}
               </Link>
             </div>
           </div>
