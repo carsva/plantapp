@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import { AppConsumer } from '../AppContext';
 import { Link } from 'react-router-dom';
 import firebase from '../../src/Firebase';
+import $ from 'jquery';
+import uploadcare from 'uploadcare-widget';
 
 let styles = {
   backgroundColor: 'yellow',
@@ -42,6 +44,14 @@ class Start extends Component {
     }
 
     function showImage() {}
+
+    $(".upload-image-button").on("click", function() {
+      
+  });
+
+  
+
+    
 
     return (
       <AppConsumer>
@@ -92,19 +102,12 @@ class Start extends Component {
                 </button>
               </Link>
               <p className="start_screen_text">Lets save some plants</p>
+
+              {/* <img src="https://ucarecdn.com/5651bbb6-c599-44bd-9c63-1db5e67db6ad/" /> */}
             </div>
-            {/* <div id="filesubmit">
-              <input
-                onChange={handleFileUploadChange}
-                type="file"
-                class="file-select"
-                accept="image/*"
-              />
-              <button onClick={handleFileUploadSubmit} class="file-submit">
-                SUBMIT
-              </button>
-              <button onClick={showImage}>Show</button>
-            </div> */}
+
+           
+
           </div>
         )}
       </AppConsumer>

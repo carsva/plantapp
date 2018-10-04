@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import { AppConsumer } from '../AppContext';
 import { Link } from 'react-router-dom';
 import { Message } from 'semantic-ui-react'
+import $ from 'jquery';
+import uploadcare from 'uploadcare-widget';
 
 class AddPlant extends Component {
 
@@ -9,6 +11,7 @@ class AddPlant extends Component {
     super(props);
     this.state = {
       error: false,
+      image: "",
     };
   }
 
@@ -21,7 +24,30 @@ class AddPlant extends Component {
   }
   }
 
+  test = () => {
+
+    var image = "";
+
+    uploadcare.openDialog(null, {
+      imagesOnly: true
+    }).done(function(file) {
+      file.promise().done(function(fileInfo){
+        console.log("From inside promise " + fileInfo.cdnUrl);
+        image = fileInfo.cdnUrl;
+      });
+    });
+
+    this.setState({
+      image: image,
+    })
+
+    console.log(this.state)
+
+  }
+
   render() {
+
+    
    
     return (
       <AppConsumer>
@@ -58,6 +84,7 @@ class AddPlant extends Component {
                   }
                 }}
               >
+              
                 <div className="ui form plant_form">
                 <div className="field"><input type="text" name="name" placeholder="Name" /></div>
                 <div className="field"><input type="hidden" name="picture" value="./../plant.jpg"/></div>
@@ -83,9 +110,12 @@ class AddPlant extends Component {
                   <option value="7">Once a week</option>
                   <option value="0">test</option>
                 </select>
+                
+                <button onClick={this.test} className="upload-image-button">Test</button>
                 <button id="standard_button" className="ui button big wider_button">Add plant</button>
                 </div>
               </form>
+              
               </div>
               <Link to="/home">
                 <button id="standard_button_orange" className="ui button big wider_button">Back</button>
