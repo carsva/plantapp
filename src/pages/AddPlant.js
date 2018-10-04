@@ -20,7 +20,8 @@ class AddPlant extends Component {
     }
   };
 
-  test = () => {
+  test = (e) => {
+    e.preventDefault();
     uploadcare
       .openDialog(null, {
         imagesOnly: true,
@@ -38,6 +39,17 @@ class AddPlant extends Component {
   };
 
   render() {
+
+    var picturebutton = () => {
+      if(this.state.picture) {
+        return <div><img id="picture_load" src={this.state.picture}></img></div>
+      } else {
+        return <button id="picture_load_button" className="ui button big wider_button" onClick={this.test}>
+                Choose a picture
+              </button>
+      }
+    }
+
     return (
       <AppConsumer>
         {context => (
@@ -83,9 +95,6 @@ class AddPlant extends Component {
             </div>
             {this.error()}
             <div>
-              <button onClick={this.test} className="upload-image-button">
-                Choose a picture
-              </button>
               <form
                 onSubmit={e => {
                   e.preventDefault();
@@ -100,7 +109,8 @@ class AddPlant extends Component {
                   if (
                     values.name === '' ||
                     values.amount === 22 ||
-                    values.waterInterval === 22
+                    values.waterInterval === 22 ||
+                    this.state.picture === ""
                   ) {
                     this.setState({
                       error: true,
@@ -148,6 +158,8 @@ class AddPlant extends Component {
                     <option value="7">Once a week</option>
                     <option value="0">test</option>
                   </select>
+                  
+              {picturebutton()}
 
                   <button
                     id="standard_button"
@@ -166,6 +178,8 @@ class AddPlant extends Component {
                 Back
               </button>
             </Link>
+
+            
 
             {/* <div style={styles}>
                 <h3>Data that lives in the context</h3>

@@ -172,3 +172,15 @@ margin-bottom: 0.7em;
   margin: 0 auto;
 }
 
+#picture_load_button {
+  font-family: 'Sriracha', regular;
+  margin-top: 0.5em;
+  margin-bottom: 1em;
+}
+
+#picture_load {
+  border-radius: 0.5em;
+  margin-top: 1.5em;
+  margin-bottom: 0.5em;
+
+}
