@@ -136,8 +136,17 @@ class AddPlant extends Component {
                     />
                   </div>
                   <div className="field">
-                    <select name="amount">
-                      <option value="22">Amount of water (dl):</option>
+                  <select name="waterInterval">
+                    <option value="22">How often do yo want to water?</option>
+                    <option value="1">Everyday</option>
+                    <option value="2">Every second day</option>
+                    <option value="3">Every third day</option>
+                    <option value="7">Once a week</option>
+                    <option value="0">test</option>
+                  </select>
+                  </div>
+                  <select name="amount">
+                      <option value="22">How much water each time?</option>
                       <option value="1">1</option>
                       <option value="2">2</option>
                       <option value="3">3</option>
@@ -149,15 +158,7 @@ class AddPlant extends Component {
                       <option value="9">9</option>
                       <option value="10">10</option>
                     </select>
-                  </div>
-                  <select name="waterInterval">
-                    <option value="22">How often?</option>
-                    <option value="1">Everyday</option>
-                    <option value="2">Every second day</option>
-                    <option value="3">Every third day</option>
-                    <option value="7">Once a week</option>
-                    <option value="0">test</option>
-                  </select>
+                  
                   
               {picturebutton()}
 

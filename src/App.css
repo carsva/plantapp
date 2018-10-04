@@ -1,6 +1,10 @@
 @import url('https://fonts.googleapis.com/css?family=Sriracha');
 @import url('https://fonts.googleapis.com/css?family=Fira+Sans');
 
+select {
+  margin-bottom: 1em;
+}
+
 #logo {
   width: 12em;
   margin-top: 5em;
