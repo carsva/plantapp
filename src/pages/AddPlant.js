@@ -25,7 +25,7 @@ class AddPlant extends Component {
     uploadcare
       .openDialog(null, {
         imagesOnly: true,
-        crop: '300x200'
+        crop: '300x300'
       })
       .done(file => {
         file.promise().done(fileInfo => {
