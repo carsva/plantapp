@@ -25,24 +25,19 @@ class AddPlant extends Component {
   }
 
   test = () => {
-
-    var image = "";
-
+    
     uploadcare.openDialog(null, {
       imagesOnly: true
-    }).done(function(file) {
-      file.promise().done(function(fileInfo){
+    }).done((file) => {
+      file.promise().done((fileInfo) => {
         console.log("From inside promise " + fileInfo.cdnUrl);
-        image = fileInfo.cdnUrl;
+        this.setState({
+          image: fileInfo.cdnUrl,
+        })
+        console.log(this.state)
+
       });
     });
-
-    this.setState({
-      image: image,
-    })
-
-    console.log(this.state)
-
   }
 
   render() {
@@ -59,6 +54,7 @@ class AddPlant extends Component {
             </div>
             {this.error()}
             <div>
+            <button onClick={this.test} className="upload-image-button">Test</button>
               <form
                 onSubmit={e => {
                   e.preventDefault();
@@ -67,7 +63,7 @@ class AddPlant extends Component {
                     name: e.target.name.value,
                     amount: parseInt(e.target.amount.value),
                     waterInterval: parseInt(e.target.waterInterval.value),
-                    picture: e.target.picture.value,
+                    picture: this.state.image,
                   };
 
                   if(values.name === "" || values.amount === 22 || values.waterInterval === 22) {
@@ -111,7 +107,7 @@ class AddPlant extends Component {
                   <option value="0">test</option>
                 </select>
                 
-                <button onClick={this.test} className="upload-image-button">Test</button>
+                
                 <button id="standard_button" className="ui button big wider_button">Add plant</button>
                 </div>
               </form>
