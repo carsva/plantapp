@@ -1,38 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
+
+<head>
+  <!DOCTYPE html>
+  <html lang="en">
+
   <head>
-    <!DOCTYPE html>
-    <html lang="en">
-      <head>
-    
-        <!--joels -->
-        <link rel="apple-touch-startup-image" href="/launch-640x1136.png" media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)">
-        <link rel="apple-touch-startup-image" href="/launch-750x1294.png" media="(device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)">
-        <link rel="apple-touch-startup-image" href="/launch-1242x2148.png" media="(device-width: 414px) and (device-height: 736px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)">
-        <link rel="apple-touch-startup-image" href="/launch-1125x2436.png" media="(device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)">
-        <link rel="apple-touch-startup-image" href="/launch-1536x2048.png" media="(min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait)">
-        <link rel="apple-touch-startup-image" href="/launch-1668x2224.png" media="(min-device-width: 834px) and (max-device-width: 834px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait)">
-        <link rel="apple-touch-startup-image" href="/launch-2048x2732.png" media="(min-device-width: 1024px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait)">
-    
-        <!--android inställning -->
-        <meta name="mobile-web-app-capable" content="yes">
+
+    <!-- The best place for this one is your <HEAD> tag -->
+    <script>UPLOADCARE_PUBLIC_KEY = "demopublickey";</script>
+    <script src="https://ucarecdn.com/libs/widget/3.6.1/uploadcare.full.min.js" charset="utf-8"></script>
+
+    <!-- This is where the widget will be. Don't forget the name attribute! -->
+    <input type="hidden" role="uploadcare-uploader" name="my_file" />
+
+    <!--joels -->
+    <link rel="apple-touch-startup-image" href="/launch-640x1136.png" media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)">
+    <link rel="apple-touch-startup-image" href="/launch-750x1294.png" media="(device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)">
+    <link rel="apple-touch-startup-image" href="/launch-1242x2148.png" media="(device-width: 414px) and (device-height: 736px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)">
+    <link rel="apple-touch-startup-image" href="/launch-1125x2436.png" media="(device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)">
+    <link rel="apple-touch-startup-image" href="/launch-1536x2048.png" media="(min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait)">
+    <link rel="apple-touch-startup-image" href="/launch-1668x2224.png" media="(min-device-width: 834px) and (max-device-width: 834px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait)">
+    <link rel="apple-touch-startup-image" href="/launch-2048x2732.png" media="(min-device-width: 1024px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait)">
+
     <!--android inställning -->
-        <meta name="theme-color" content="#276640">
-    
-        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-        <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
-        <meta name="msapplication-TileColor" content="#da532c">
-    
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <!--
+    <meta name="mobile-web-app-capable" content="yes">
+    <!--android inställning -->
+    <meta name="theme-color" content="#276640">
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!--
           manifest.json provides metadata used when your web app is added to the
           homescreen on Android. See https://developers.google.com/web/fundamentals/engage-and-retain/web-app-manifest/
         -->
-        <link rel="manifest" href="/manifest.json">
-        <!--
+    <link rel="manifest" href="/manifest.json">
+    <!--
           Notice the use of %PUBLIC_URL% in the tags above.
           It will be replaced with the URL of the `public` folder during the build.
           Only files inside the `public` folder can be referenced from the HTML.
@@ -43,24 +52,26 @@
         -->
     <title>React App</title>
   </head>
+
   <body>
     <noscript>
       You need to enable JavaScript to run this app.
     </noscript>
     <div id="root"></div>
-    
-<script src="https://www.gstatic.com/firebasejs/5.5.2/firebase.js"></script>
-<script>
-  // Initialize Firebase
-  var config = {
-    apiKey: "AIzaSyCVldo2NDXx8u2yl_k9hC3GYh1nlrNW1a8",
-    authDomain: "planty-6dbf1.firebaseapp.com",
-    databaseURL: "https://planty-6dbf1.firebaseio.com",
-    projectId: "planty-6dbf1",
-    storageBucket: "",
-    messagingSenderId: "502896880906"
-  };
-  firebase.initializeApp(config);
-</script>
+
+    <script src="https://www.gstatic.com/firebasejs/5.5.2/firebase.js"></script>
+    <script>
+      // Initialize Firebase
+      var config = {
+        apiKey: "AIzaSyCVldo2NDXx8u2yl_k9hC3GYh1nlrNW1a8",
+        authDomain: "planty-6dbf1.firebaseapp.com",
+        databaseURL: "https://planty-6dbf1.firebaseio.com",
+        projectId: "planty-6dbf1",
+        storageBucket: "",
+        messagingSenderId: "502896880906"
+      };
+      firebase.initializeApp(config);
+    </script>
   </body>
-</html>
+
+  </html>
